@@ -16,21 +16,21 @@
   <meta name="author" content="Cathelloya">
   <meta name="keywords" content="">
   
-    <meta name="description" content="1  1. 符号库的制作 1.新建库![[Pasted image 20230208124112.png]]2.鼠标左键长按从右向左选，碰到部分即全部，从左向右选，必选全部选中才行3.引脚的属性，按tab键切换到下一个电气类型，不知道的话选择自由，三态，无源输入或输出选双向USB是差分，选择双向VCOM是内部稳压的外置滤波电容的引脚，设置为电源输出（两个电源输出相连会报错）GND选电源输入DAC_">
+    <meta name="description" content="1. 符号库的制作 1.新建库![[Pasted image 20230208124112.png]]2.鼠标左键长按从右向左选，碰到部分即全部，从左向右选，必选全部选中才行3.引脚的属性，按tab键切换到下一个电气类型，不知道的话选择自由，三态，无源输入或输出选双向USB是差分，选择双向VCOM是内部稳压的外置滤波电容的引脚，设置为电源输出（两个电源输出相连会报错）GND选电源输入DAC_L音频">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="https://cathelloya.github.io/Cathelloya/2023/09/23/Kicad/index.html">
+<meta property="og:title" content="KiCad基础操作">
+<meta property="og:url" content="https://cathelloya.github.io/Cathelloya/2023/09/23/Kicad-1/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="1  1. 符号库的制作 1.新建库![[Pasted image 20230208124112.png]]2.鼠标左键长按从右向左选，碰到部分即全部，从左向右选，必选全部选中才行3.引脚的属性，按tab键切换到下一个电气类型，不知道的话选择自由，三态，无源输入或输出选双向USB是差分，选择双向VCOM是内部稳压的外置滤波电容的引脚，设置为电源输出（两个电源输出相连会报错）GND选电源输入DAC_">
+<meta property="og:description" content="1. 符号库的制作 1.新建库![[Pasted image 20230208124112.png]]2.鼠标左键长按从右向左选，碰到部分即全部，从左向右选，必选全部选中才行3.引脚的属性，按tab键切换到下一个电气类型，不知道的话选择自由，三态，无源输入或输出选双向USB是差分，选择双向VCOM是内部稳压的外置滤波电容的引脚，设置为电源输出（两个电源输出相连会报错）GND选电源输入DAC_L音频">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2023-09-23T15:04:21.730Z">
-<meta property="article:modified_time" content="2023-02-28T14:10:19.187Z">
+<meta property="article:published_time" content="2023-09-23T15:21:43.914Z">
+<meta property="article:modified_time" content="2023-09-23T15:22:20.200Z">
 <meta property="article:author" content="Cathelloya">
 <meta name="twitter:card" content="summary_large_image">
   
   
   
-  <title>Hexo</title>
+  <title>KiCad基础操作 - Hexo</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -196,7 +196,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text=""></span>
+            <span id="subtitle" data-typed-text="KiCad基础操作"></span>
           
         </div>
 
@@ -207,7 +207,7 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2023-09-23 23:04" pubdate>
+        <time datetime="2023-09-23 23:21" pubdate>
           2023年9月23日 晚上
         </time>
       </span>
@@ -267,23 +267,21 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header"></h1>
+            <h1 id="seo-header">KiCad基础操作</h1>
             
             
               <div class="markdown-body">
                 
-                <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs toc"><br></code></pre></td></tr></table></figure>
-
-<h2 id="1-符号库的制作"><a href="#1-符号库的制作" class="headerlink" title="1. 符号库的制作"></a>1. 符号库的制作</h2><p> 1.新建库<br>![[Pasted image 20230208124112.png]]<br>2.鼠标左键长按从右向左选，碰到部分即全部，从左向右选，必选全部选中才行<br>3.引脚的属性，按tab键切换到下一个<br>电气类型，不知道的话选择自由，三态，无源<br>输入或输出选双向<br>USB是差分，选择双向<br>VCOM是内部稳压的外置滤波电容的引脚，设置为电源输出（两个电源输出相连会报错）<br>GND选电源输入<br>DAC_L音频输出选择输出<br>接滤波电容和GND的选择电源输出<br>![[Pasted image 20230208124416.png]]<br>4.库符号属性<br>封装，选择封装<br>数据手册可以选择网址</p>
+                <h1 id="1-符号库的制作"><a href="#1-符号库的制作" class="headerlink" title="1. 符号库的制作"></a>1. 符号库的制作</h1><p> 1.新建库<br>![[Pasted image 20230208124112.png]]<br>2.鼠标左键长按从右向左选，碰到部分即全部，从左向右选，必选全部选中才行<br>3.引脚的属性，按tab键切换到下一个<br>电气类型，不知道的话选择自由，三态，无源<br>输入或输出选双向<br>USB是差分，选择双向<br>VCOM是内部稳压的外置滤波电容的引脚，设置为电源输出（两个电源输出相连会报错）<br>GND选电源输入<br>DAC_L音频输出选择输出<br>接滤波电容和GND的选择电源输出<br>![[Pasted image 20230208124416.png]]<br>4.库符号属性<br>封装，选择封装<br>数据手册可以选择网址</p>
 <p>封装筛选器，SO-16*,SOP-16* 筛选和关键字相关的</p>
 <p>描述，描述功能，支持中文<br>关键字，最好用英文</p>
 <p>编辑spice模型，用于电路仿真</p>
 <p>Package…不可见，位置随便放<br>![[Pasted image 20230208125127.png]]<br>5.在原理图中按下a放置并且查看属性<br>![[Pasted image 20230208125618.png]]</p>
-<h2 id="2-封装库的制作"><a href="#2-封装库的制作" class="headerlink" title="2. 封装库的制作"></a>2. 封装库的制作</h2><p>1.新建库，新建封装，选择贴片，保存至新建的库中<br>2.画出矩形框（比数据手册略大也是可以的），放置焊盘，按下e<br>选择焊盘类型<br>焊盘编号，即焊盘上面的数字<br>设置位置X<br>设置焊盘的尺寸<br>从通孔偏移形状，因为光标的中心不一定和几何中心重合，比如这个左偏0.35mm<br>![[Pasted image 20230208125923.png]]<br>3.对焊盘按下ctrl+D,同时进行了复制粘贴<br>鼠标右键，特殊工具，精确移动，快捷键shift+M，输入移动的距离<br>鼠标右键，特殊工具，创建阵列<br>![[Pasted image 20230208131215.png]]<br>4.空白处右键，焊盘重新编号，按顺序点击焊盘<br>5.天线处因为需要天线保护隔离，电磁干扰屏蔽，信号强度，所以需要keepout area<br>创建不规则焊盘，选择弧线<br>但是只能画一个大概，如果精度要求高，需要email厂家索要.dxf文件，然后文件-&gt;导入-&gt;图形<br>6.从选取创建多边形，我们画的是分开的，而创建的多边形是一体的<br>![[Pasted image 20230208132433.png]]<br>7.焊盘2是GND,把焊盘2放入那个多边形，选择多边形，层选择cu，填充形状<br>选择焊盘2，按两下crtl+E</p>
+<h1 id="2-封装库的制作"><a href="#2-封装库的制作" class="headerlink" title="2. 封装库的制作"></a>2. 封装库的制作</h1><p>1.新建库，新建封装，选择贴片，保存至新建的库中<br>2.画出矩形框（比数据手册略大也是可以的），放置焊盘，按下e<br>选择焊盘类型<br>焊盘编号，即焊盘上面的数字<br>设置位置X<br>设置焊盘的尺寸<br>从通孔偏移形状，因为光标的中心不一定和几何中心重合，比如这个左偏0.35mm<br>![[Pasted image 20230208125923.png]]<br>3.对焊盘按下ctrl+D,同时进行了复制粘贴<br>鼠标右键，特殊工具，精确移动，快捷键shift+M，输入移动的距离<br>鼠标右键，特殊工具，创建阵列<br>![[Pasted image 20230208131215.png]]<br>4.空白处右键，焊盘重新编号，按顺序点击焊盘<br>5.天线处因为需要天线保护隔离，电磁干扰屏蔽，信号强度，所以需要keepout area<br>创建不规则焊盘，选择弧线<br>但是只能画一个大概，如果精度要求高，需要email厂家索要.dxf文件，然后文件-&gt;导入-&gt;图形<br>6.从选取创建多边形，我们画的是分开的，而创建的多边形是一体的<br>![[Pasted image 20230208132433.png]]<br>7.焊盘2是GND,把焊盘2放入那个多边形，选择多边形，层选择cu，填充形状<br>选择焊盘2，按两下crtl+E</p>
 <p>![[Pasted image 20230208133042.png]]<br>8.养成良好的习惯，选择丝印层，在焊盘1处放置一个圆圈，不能离焊盘太近<br>选择F.Courtyard顶层封装层，稍大一些，框选中焊盘<br>丝印放在焊盘上会有警报，调整方法<br>（1）删除警报：）<br>（2）丝印仅保留未被焊盘覆盖的区域，删除被遮挡的部分<br>![[Pasted image 20230208133914.png]]</p>
-<h2 id="3-绘制原理图PCB布线全流程"><a href="#3-绘制原理图PCB布线全流程" class="headerlink" title="3. 绘制原理图PCB布线全流程"></a>3. 绘制原理图PCB布线全流程</h2><p> 原理图<br>1.图框的设置，双击title<br>2.放置<br>有极性的电容，搜索c_p<br>保险，f<br>选中，按下G，可以拖动<br>3.同一个网络标签可以通过高亮来显示<br>添加连接的图形线I<br>4.位号分配，批注原理图<br>5.分配封装，可以多选元器件，封装筛选，双击<br>![[Pasted image 20230208142305.png]]<br>6.电气规则检查<br>如果引脚确实不需要连接，按下Q<br>按照自己的规则，编辑原理图设置<br>或者右击错误，排除<br>![[Pasted image 20230208143125.png]]<br> PCB<br>1.导入.dxf文件，也就是板框文件，如果是freecad,opencad,proecad可以直接用，如果是autocad导出的，要按下X进行打散，否则会乱<br>选择放置的层，简单的一般在Edge.Cuts层<br>比较复杂的可以先放在User.Drawing层，然后一点一点的搬运到Edge.Cuts层<br>测量一下尺寸有没有问题<br>按下ALT+3，进入3D视图，如果是未封闭图形会报错<br>2.电子元件向下对齐，下指的是元件的下边缘，也就是后选择上去的元件<br>获取和移动封装，t，name<br>布线预设-&gt;预定义尺寸<br>              -&gt;网络类表<br>按下V快速添加过孔<br>3.敷铜，填充区，敷铜优先级0最低，按下B填充<br>间隙和最小宽度改下<br>焊盘连接 防热焊盘-&gt;防回流焊<br>进行电器规则的检查<br>![[Pasted image 20230208160707.png]]<br>4.如果还是非封闭图形，隐藏所有层，只显示edge.cut层<br>若看不见，则调细边框<br>5.导出，导出step，给结构的配型<br>制造输出，BOM<br>                 .pos元件放置，用在SMT贴片<br>gerber打板文件，生成层文件和过孔文件</p>
-<h2 id="4-导出导入3D模型"><a href="#4-导出导入3D模型" class="headerlink" title="4. 导出导入3D模型"></a>4. 导出导入3D模型</h2><p>1.封装属性，导入<br>2.打开FreeCAD<br>展开start，选择sketch<br>文件，新建<br>新建图纸，XY<br>show grid，画一个正方形，左侧close<br>展开sketch，选择part<br>点击sketch，点击Extrude，设置along高度<br>导出export<br>3.在符号编辑器导入封装，原理图，更新PCB<br>放置网格原点<br>4.在PCB文件，导出，STEP，注意勾选替换相似文件<br>5.一些3D封装模型的网站<br><a target="_blank" rel="noopener" href="http://www.3dcontentcentral.cn/">www.3dcontentcentral.cn</a><br>kicad支持比较好的是.step，版本推荐AP214<br>[2023.2.8]</p>
-<h2 id="5-制作一个USB隔离器"><a href="#5-制作一个USB隔离器" class="headerlink" title="5. 制作一个USB隔离器"></a>5. 制作一个USB隔离器</h2><p>1.单独的为USB供电</p>
+<h1 id="3-绘制原理图PCB布线全流程"><a href="#3-绘制原理图PCB布线全流程" class="headerlink" title="3. 绘制原理图PCB布线全流程"></a>3. 绘制原理图PCB布线全流程</h1><p> 原理图<br>1.图框的设置，双击title<br>2.放置<br>有极性的电容，搜索c_p<br>保险，f<br>选中，按下G，可以拖动<br>3.同一个网络标签可以通过高亮来显示<br>添加连接的图形线I<br>4.位号分配，批注原理图<br>5.分配封装，可以多选元器件，封装筛选，双击<br>![[Pasted image 20230208142305.png]]<br>6.电气规则检查<br>如果引脚确实不需要连接，按下Q<br>按照自己的规则，编辑原理图设置<br>或者右击错误，排除<br>![[Pasted image 20230208143125.png]]<br> PCB<br>1.导入.dxf文件，也就是板框文件，如果是freecad,opencad,proecad可以直接用，如果是autocad导出的，要按下X进行打散，否则会乱<br>选择放置的层，简单的一般在Edge.Cuts层<br>比较复杂的可以先放在User.Drawing层，然后一点一点的搬运到Edge.Cuts层<br>测量一下尺寸有没有问题<br>按下ALT+3，进入3D视图，如果是未封闭图形会报错<br>2.电子元件向下对齐，下指的是元件的下边缘，也就是后选择上去的元件<br>获取和移动封装，t，name<br>布线预设-&gt;预定义尺寸<br>              -&gt;网络类表<br>按下V快速添加过孔<br>3.敷铜，填充区，敷铜优先级0最低，按下B填充<br>间隙和最小宽度改下<br>焊盘连接 防热焊盘-&gt;防回流焊<br>进行电器规则的检查<br>![[Pasted image 20230208160707.png]]<br>4.如果还是非封闭图形，隐藏所有层，只显示edge.cut层<br>若看不见，则调细边框<br>5.导出，导出step，给结构的配型<br>制造输出，BOM<br>                 .pos元件放置，用在SMT贴片<br>gerber打板文件，生成层文件和过孔文件</p>
+<h1 id="4-导出导入3D模型"><a href="#4-导出导入3D模型" class="headerlink" title="4. 导出导入3D模型"></a>4. 导出导入3D模型</h1><p>1.封装属性，导入<br>2.打开FreeCAD<br>展开start，选择sketch<br>文件，新建<br>新建图纸，XY<br>show grid，画一个正方形，左侧close<br>展开sketch，选择part<br>点击sketch，点击Extrude，设置along高度<br>导出export<br>3.在符号编辑器导入封装，原理图，更新PCB<br>放置网格原点<br>4.在PCB文件，导出，STEP，注意勾选替换相似文件<br>5.一些3D封装模型的网站<br><a target="_blank" rel="noopener" href="http://www.3dcontentcentral.cn/">www.3dcontentcentral.cn</a><br>kicad支持比较好的是.step，版本推荐AP214<br>[2023.2.8]</p>
+<h1 id="5-制作一个USB隔离器"><a href="#5-制作一个USB隔离器" class="headerlink" title="5. 制作一个USB隔离器"></a>5. 制作一个USB隔离器</h1><p>1.单独的为USB供电</p>
 <p>B0505LS金升阳，输入电压4.5V-5.5V，输出电压5V，输出电流200mA，输出负载不能小于额定负载    的10%，可以在输出端并联一个电阻接地<br>SL2.1A，适用于USB1.1，读取不太好</p>
 <p>按下&#96; 可以直接进入网络高亮<br>开机的时候瞬间的电流还是比较高的，需要注意</p>
 <p>AutoCAD的文件.dwg转换为KiCAD可以读取的文件，使用LibreCAD软件（主要偏向于2D）<br>导入.dwg文件后连续按两下鼠标中键，或者按下视图自动缩放，保存R12<br>打开Kicad，导入.dxf文件，放入User.Drawing层，默认线宽可以调小一点，防止不封闭<br>打开Edge.cuts层，画出电路板的轮廓<br>如果需要有洞，方法一 在Kicad画出一个轮廓；方法二 从右往左框选中圆，ctrl+D，e，移到Edge.cuts层</p>
@@ -291,26 +289,26 @@
 <p>AUM的具体接法参见数据手册，去ADI官网<a target="_blank" rel="noopener" href="https://www.analog.com/cn/index.html">ADI公司 | 混合信号和数字信号处理IC | 亚德诺半导体 (analog.com)</a>，产品</p>
 <p>在丝印层上划一道线，自己切割<br>芯片下方开槽，防止爬电（爬电距离：两相邻导体或一个导体与相邻电机壳表面的沿绝绝缘表面测量的最短距离）<br>![[Pasted image 20230209140634.png]]<br>2.导出PCB<br>生成gerber文件<br>![[S_$JF08UL@J7N5@5E}54HG5.png]]<br>焊盘层只是SMT的焊盘，或者叫钢网，开钢网所需要的文件<br>阻焊层不仅要阻焊到SMT，通孔的焊盘也要阻焊到</p>
 <p>生成BOM文件，格式选择csv，可以直接看</p>
-<h2 id="6-显示模式的设置"><a href="#6-显示模式的设置" class="headerlink" title="6. 显示模式的设置"></a>6. 显示模式的设置</h2><p>1.左侧<br>网格显示<br>（1）左侧最上面，是否显示网格点<br>（2）偏好设置，显示选项，网格样式<br>极坐标和笛卡尔坐标的切换，基本兼容了<br>大十字光标<br>飞线显示开关<br>用曲线显示飞线<br>在正常和暗显之间切换非活动图层，在做好布局之后，可以快速预览布局<br>切换高亮网络，一般用ctrl+鼠标左键就可以了<br>敷铜，选择网络，比如F.Cu，画出敷铜范围，按下B进行填充。在右侧的层，对象中可以设置敷铜的透明度<br>在轮廓下显示焊盘，这样只显示轮廓的边缘，好处，（1）减轻显卡的压力；（2）拖拉元件时方便检查锐角的情况<br>轮廓显示过孔<br>显示外观管理器，即右侧的菜单<br>2.右侧<br>对象，调整布线，敷铜的透明度，是否显示飞线等等。若要修改网格的颜色，偏好设置，颜色，主题，退出只读模式</p>
-<h2 id="7-单端交互式布线详解"><a href="#7-单端交互式布线详解" class="headerlink" title="7. 单端交互式布线详解"></a>7. 单端交互式布线详解</h2><p>1.Kicad6.0自动布线已经无了<br>布线，交互式布线设置<br>高亮碰撞，违反了电器规则后会显示绿色，右侧也可以更改模式<br>在多条布线集中的区域调整走线的路径，修改的时候使用推挤模式更合适<br>自由角度模式，从结点出发的任何角度都可以布线，用于实在没办法的时候<br>优化焊盘的连接，自动找焊盘连接<br>移除多余的布线，选择一个最优布线，删除多余的布线，但是在环状的布线下不要使用<br>允许违反DRC，在不想改规则的时候，慎用<br>![[Pasted image 20230209165618.png]]<br>最小间距设置，在电路板或者文件，设计规则，约束，铜层，最小布线宽度<br>最小环形宽度，过孔，通孔焊盘中间打孔到边缘的距离<br>![[Pasted image 20230209170152.png]]<br>删除布线，选中后按delete，删除整个网络的线，按下shift+delete<br>调整布线的走向，按下&#x2F;键<br>选择绕走模式，自动优化出一条布线<br>圆弧形布线，按下ctrl+&#x2F;<br>2.设置线宽<br>（1）布线的时候按下e，输入布线的宽度（按下D，拖动，布线不会断开）<br>（2）使用网络宽度和预定义，按下W可以在布线的时候快速的切换，按shift+w反顺序调整<br>布线时按下V切换顶层和底层<br>电路板设置，网络类表<br>可以在网络名称筛选出模糊搜索，应用筛选，选择新网络VDD，分配到所有列出的网络<br>![[Pasted image 20230209172149.png]]<br>双击布线可以显示宽度等信息</p>
-<h2 id="8-PCB敷铜-开天窗"><a href="#8-PCB敷铜-开天窗" class="headerlink" title="8.PCB敷铜&amp;开天窗"></a>8.PCB敷铜&amp;开天窗</h2><p>1.双绞线卷起来，对差模信号可以起到抗干扰的作用，让干扰同步<br>ctrl+b，取消填充敷铜，只剩边界<br>敷铜区属性，间隙，两条相邻的走线的距离；最小宽度，大于此才会敷铜<br>焊盘连接<br>（1）防热（花焊盘），如果全敷的话，因为铜的导热性比较好，会将热量散发出去，不与焊接<br>（2）金属化过孔焊盘，放散热，在SMT时<br>（3）<br>![[V(<code>@]Y4OM</code>W[Y{2~&#96;<a href="mailto:&#x58;&#88;&#x57;&#64;&#x34;&#x56;&#46;&#x70;&#110;&#103;">&#x58;&#88;&#x57;&#64;&#x34;&#x56;&#46;&#x70;&#110;&#103;</a>]]<br>（4）网状图案敷铜，在AC-DC电源板或单面板，包封焊？的时候比较有用，在过锡炉的时候比较有用。因为铜的膨胀系数和环氧板的膨胀系数不一样，同的热胀率远高于纸板或FR-4，会造成铜面鼓包，也考虑到电磁影响，<br>网格宽度指线宽，网格间隙，一般是方格，大小是设置值平方<br>方向指角度<br>平滑效果，详细见软件<br>为什么不能出现钝角，直角？因为加工精度的问题<br>删除孤铜，一般选从不，如果想要，可以放一个过孔<br>轮廓线显示，可以修改。。<br>转角处理，倒角5mm，以敷铜的边界线5mm的边界，而不是电路板的<br>右击敷铜的边界，创建拐角，然后就可以去拉了<br>锁定，点击覆盖锁定还是可以拖动的<br>敷铜的优先级，敷铜会绕开优先级比较高的，一般来说地线优先级最低</p>
+<h1 id="6-显示模式的设置"><a href="#6-显示模式的设置" class="headerlink" title="6. 显示模式的设置"></a>6. 显示模式的设置</h1><p>1.左侧<br>网格显示<br>（1）左侧最上面，是否显示网格点<br>（2）偏好设置，显示选项，网格样式<br>极坐标和笛卡尔坐标的切换，基本兼容了<br>大十字光标<br>飞线显示开关<br>用曲线显示飞线<br>在正常和暗显之间切换非活动图层，在做好布局之后，可以快速预览布局<br>切换高亮网络，一般用ctrl+鼠标左键就可以了<br>敷铜，选择网络，比如F.Cu，画出敷铜范围，按下B进行填充。在右侧的层，对象中可以设置敷铜的透明度<br>在轮廓下显示焊盘，这样只显示轮廓的边缘，好处，（1）减轻显卡的压力；（2）拖拉元件时方便检查锐角的情况<br>轮廓显示过孔<br>显示外观管理器，即右侧的菜单<br>2.右侧<br>对象，调整布线，敷铜的透明度，是否显示飞线等等。若要修改网格的颜色，偏好设置，颜色，主题，退出只读模式</p>
+<h1 id="7-单端交互式布线详解"><a href="#7-单端交互式布线详解" class="headerlink" title="7. 单端交互式布线详解"></a>7. 单端交互式布线详解</h1><p>1.Kicad6.0自动布线已经无了<br>布线，交互式布线设置<br>高亮碰撞，违反了电器规则后会显示绿色，右侧也可以更改模式<br>在多条布线集中的区域调整走线的路径，修改的时候使用推挤模式更合适<br>自由角度模式，从结点出发的任何角度都可以布线，用于实在没办法的时候<br>优化焊盘的连接，自动找焊盘连接<br>移除多余的布线，选择一个最优布线，删除多余的布线，但是在环状的布线下不要使用<br>允许违反DRC，在不想改规则的时候，慎用<br>![[Pasted image 20230209165618.png]]<br>最小间距设置，在电路板或者文件，设计规则，约束，铜层，最小布线宽度<br>最小环形宽度，过孔，通孔焊盘中间打孔到边缘的距离<br>![[Pasted image 20230209170152.png]]<br>删除布线，选中后按delete，删除整个网络的线，按下shift+delete<br>调整布线的走向，按下&#x2F;键<br>选择绕走模式，自动优化出一条布线<br>圆弧形布线，按下ctrl+&#x2F;<br>2.设置线宽<br>（1）布线的时候按下e，输入布线的宽度（按下D，拖动，布线不会断开）<br>（2）使用网络宽度和预定义，按下W可以在布线的时候快速的切换，按shift+w反顺序调整<br>布线时按下V切换顶层和底层<br>电路板设置，网络类表<br>可以在网络名称筛选出模糊搜索，应用筛选，选择新网络VDD，分配到所有列出的网络<br>![[Pasted image 20230209172149.png]]<br>双击布线可以显示宽度等信息</p>
+<h1 id="8-PCB敷铜-开天窗"><a href="#8-PCB敷铜-开天窗" class="headerlink" title="8.PCB敷铜&amp;开天窗"></a>8.PCB敷铜&amp;开天窗</h1><p>1.双绞线卷起来，对差模信号可以起到抗干扰的作用，让干扰同步<br>ctrl+b，取消填充敷铜，只剩边界<br>敷铜区属性，间隙，两条相邻的走线的距离；最小宽度，大于此才会敷铜<br>焊盘连接<br>（1）防热（花焊盘），如果全敷的话，因为铜的导热性比较好，会将热量散发出去，不与焊接<br>（2）金属化过孔焊盘，放散热，在SMT时<br>（3）<br>![[V(<code>@]Y4OM</code>W[Y{2~&#96;<a href="mailto:&#88;&#x58;&#87;&#64;&#x34;&#x56;&#x2e;&#x70;&#110;&#103;">&#88;&#x58;&#87;&#64;&#x34;&#x56;&#x2e;&#x70;&#110;&#103;</a>]]<br>（4）网状图案敷铜，在AC-DC电源板或单面板，包封焊？的时候比较有用，在过锡炉的时候比较有用。因为铜的膨胀系数和环氧板的膨胀系数不一样，同的热胀率远高于纸板或FR-4，会造成铜面鼓包，也考虑到电磁影响，<br>网格宽度指线宽，网格间隙，一般是方格，大小是设置值平方<br>方向指角度<br>平滑效果，详细见软件<br>为什么不能出现钝角，直角？因为加工精度的问题<br>删除孤铜，一般选从不，如果想要，可以放一个过孔<br>轮廓线显示，可以修改。。<br>转角处理，倒角5mm，以敷铜的边界线5mm的边界，而不是电路板的<br>右击敷铜的边界，创建拐角，然后就可以去拉了<br>锁定，点击覆盖锁定还是可以拖动的<br>敷铜的优先级，敷铜会绕开优先级比较高的，一般来说地线优先级最低</p>
 <p>2.开天窗作用，露出铜，可以镀上喷漆你，增加导流性，不喷漆可以提高散热<br>开天窗开在阻焊层，选择F.Mark和B.Mark，绘制形状，绘制的区域不喷阻焊；矩形区域划画出后按下E填充</p>
-<h2 id="9-绘制金手指"><a href="#9-绘制金手指" class="headerlink" title="9. 绘制金手指"></a>9. 绘制金手指</h2><p>1.SMT需要注意基准点，绘制金手指的时候按照图纸的来就行<br>打开封装编辑器<br>NGFF-75PIN-0.5MM-B-KEY-EDGE 相邻两个焊盘的中心是0.5MM；B-KEY是它的子系列，edge是板边<br>通孔，直插入<br>在板框层绘制，画一条直线，设置起点和终点，ctrl+D，设置起点和终点<br>同一层绘制的直线有吸附作用<br>移动时只捕捉弧心，点击弧上的捕捉点，按下M<br>线段的输入坐标可以输入运算式<br>按下M移动的时候，改用shift+M，可以输入移动的距离</p>
+<h1 id="9-绘制金手指"><a href="#9-绘制金手指" class="headerlink" title="9. 绘制金手指"></a>9. 绘制金手指</h1><p>1.SMT需要注意基准点，绘制金手指的时候按照图纸的来就行<br>打开封装编辑器<br>NGFF-75PIN-0.5MM-B-KEY-EDGE 相邻两个焊盘的中心是0.5MM；B-KEY是它的子系列，edge是板边<br>通孔，直插入<br>在板框层绘制，画一条直线，设置起点和终点，ctrl+D，设置起点和终点<br>同一层绘制的直线有吸附作用<br>移动时只捕捉弧心，点击弧上的捕捉点，按下M<br>线段的输入坐标可以输入运算式<br>按下M移动的时候，改用shift+M，可以输入移动的距离</p>
 <p>放置焊盘的时候选择板边连接器<br>多个焊盘，选中，按下F切换到底层，右击，复制默认属性，粘贴</p>
 <p>在silk层可以做标记<br>因为这个不需要，所以在BOM和SMT坐标文件里面排除</p>
-<h2 id="10-原理图的连接"><a href="#10-原理图的连接" class="headerlink" title="10. 原理图的连接"></a>10. 原理图的连接</h2><p>1.不用的端口按Q放置<br>添加节点J，交叉的线通过这个可以进行连接，用网络高亮进行检查<br>insert可以自动插入等长等参数的线<br>语法帮助<br>![[Pasted image 20230211204821.png]]<br>前缀 D[0..7]<br>{网络1 网络2}<br>按下Z添加总线入口到总线，按B添加总线<br>![[Pasted image 20230211205412.png]]<br>输入总线名称BUS[0..15]<br>![[Pasted image 20230211210020.png]]<br>实际上总线的名称要和标签相互对应，之后将总线直接相连<br>PA类似于数组，不可变的是PA，可变的是0..15，相连后只和对应的数字进行匹配<br>好处是方便阅读原理图，使界面相对简洁<br>![[Pasted image 20230211210206.png]]<br>网络类，<br>内部展开<br>SPI{MOSI MISO CLK CS[0..3]}<br>SPI.MOSI SPI.MISO SPI.CLK SPI.CS0 SPI.CS1 SPI.CS2 SPI.CS3<br>![[Pasted image 20230211211110.png]]</p>
-<h2 id="11-多原理图的连接"><a href="#11-多原理图的连接" class="headerlink" title="11.多原理图的连接"></a>11.多原理图的连接</h2><p>1.ctrl+L添加全局标签<br>网络标签，在当前的原理同中，多张原理图用全局标签，但是会比较乱<br>分层标签，<br>添加分层图框，可以分模块化<br>![[Pasted image 20230212101550.png]]<br>这样就有了分页原理图的一个入口，双击进入，右击可以离开分页<br>所有的gnd，3.3V都是全局标签<br>普通标签不能跨原理图<br>![[Pasted image 20230212102403.png]]<br>ctrl+f可以查找标签<br>添加一个分层标签H，本层原理图和其它原理图的连接端口，在分层原理图中添加分层标签，离开后点击导入分层图框引脚<br>![[Pasted image 20230212102800.png]]<br>上排图标，显示原理图的连接结构</p>
-<h2 id="12-PCB参数计算"><a href="#12-PCB参数计算" class="headerlink" title="12.PCB参数计算"></a>12.PCB参数计算</h2><p>1.过孔外径，在PCB计算器中通过过孔计算出电流的大小<br>间隙孔直径，相当于铜的直径<br>温升，允许温升为10℃的时侯计算得出的数值<br>脉冲上升时间，也就是过孔过多高的频率<br>工业上一般不会多过孔，至少是双过孔，防止温升，腐蚀<br>![[Pasted image 20230212150335.png]]<br>2.布线宽度<br>双层板设置外层布线，多层板设置内层布线，线路厚度外层通常比内层要厚<br>![[Pasted image 20230212150801.png]]<br>3.电气间距<br>大一个等级会好一点？<br>![[Pasted image 20230212151000.png]]<br>4.电路板类别<br>![[Pasted image 20230212152425.png]]<br>电源类的，大电流类的以布线宽度为标准<br>数据线，以传输为标准</p>
+<h1 id="10-原理图的连接"><a href="#10-原理图的连接" class="headerlink" title="10. 原理图的连接"></a>10. 原理图的连接</h1><p>1.不用的端口按Q放置<br>添加节点J，交叉的线通过这个可以进行连接，用网络高亮进行检查<br>insert可以自动插入等长等参数的线<br>语法帮助<br>![[Pasted image 20230211204821.png]]<br>前缀 D[0..7]<br>{网络1 网络2}<br>按下Z添加总线入口到总线，按B添加总线<br>![[Pasted image 20230211205412.png]]<br>输入总线名称BUS[0..15]<br>![[Pasted image 20230211210020.png]]<br>实际上总线的名称要和标签相互对应，之后将总线直接相连<br>PA类似于数组，不可变的是PA，可变的是0..15，相连后只和对应的数字进行匹配<br>好处是方便阅读原理图，使界面相对简洁<br>![[Pasted image 20230211210206.png]]<br>网络类，<br>内部展开<br>SPI{MOSI MISO CLK CS[0..3]}<br>SPI.MOSI SPI.MISO SPI.CLK SPI.CS0 SPI.CS1 SPI.CS2 SPI.CS3<br>![[Pasted image 20230211211110.png]]</p>
+<h1 id="11-多原理图的连接"><a href="#11-多原理图的连接" class="headerlink" title="11.多原理图的连接"></a>11.多原理图的连接</h1><p>1.ctrl+L添加全局标签<br>网络标签，在当前的原理同中，多张原理图用全局标签，但是会比较乱<br>分层标签，<br>添加分层图框，可以分模块化<br>![[Pasted image 20230212101550.png]]<br>这样就有了分页原理图的一个入口，双击进入，右击可以离开分页<br>所有的gnd，3.3V都是全局标签<br>普通标签不能跨原理图<br>![[Pasted image 20230212102403.png]]<br>ctrl+f可以查找标签<br>添加一个分层标签H，本层原理图和其它原理图的连接端口，在分层原理图中添加分层标签，离开后点击导入分层图框引脚<br>![[Pasted image 20230212102800.png]]<br>上排图标，显示原理图的连接结构</p>
+<h1 id="12-PCB参数计算"><a href="#12-PCB参数计算" class="headerlink" title="12.PCB参数计算"></a>12.PCB参数计算</h1><p>1.过孔外径，在PCB计算器中通过过孔计算出电流的大小<br>间隙孔直径，相当于铜的直径<br>温升，允许温升为10℃的时侯计算得出的数值<br>脉冲上升时间，也就是过孔过多高的频率<br>工业上一般不会多过孔，至少是双过孔，防止温升，腐蚀<br>![[Pasted image 20230212150335.png]]<br>2.布线宽度<br>双层板设置外层布线，多层板设置内层布线，线路厚度外层通常比内层要厚<br>![[Pasted image 20230212150801.png]]<br>3.电气间距<br>大一个等级会好一点？<br>![[Pasted image 20230212151000.png]]<br>4.电路板类别<br>![[Pasted image 20230212152425.png]]<br>电源类的，大电流类的以布线宽度为标准<br>数据线，以传输为标准</p>
 <p>过孔外径，如果是电源类的，大电流的，不考虑脉冲上升时间了，考虑成品通孔直径，镀层厚度，过孔长度（板子的厚度），间隙孔直径。注意，此处没有给出过孔开天窗的电流和过孔塞锡的电流，因为这个和加工的工艺有很大的关系，建议和加工厂进行联系</p>
-<h2 id="13-原理图图纸编辑，关键字，变量的应用"><a href="#13-原理图图纸编辑，关键字，变量的应用" class="headerlink" title="13.原理图图纸编辑，关键字，变量的应用"></a>13.原理图图纸编辑，关键字，变量的应用</h2><p>1.修改原理图图框，双击title，进入图框设置<br>LOGO右侧倒数第二个，可以添加图片</p>
+<h1 id="13-原理图图纸编辑，关键字，变量的应用"><a href="#13-原理图图纸编辑，关键字，变量的应用" class="headerlink" title="13.原理图图纸编辑，关键字，变量的应用"></a>13.原理图图纸编辑，关键字，变量的应用</h1><p>1.修改原理图图框，双击title，进入图框设置<br>LOGO右侧倒数第二个，可以添加图片</p>
 <p>2.图纸编辑器<br>检查，显示设计检查器，相当于把一个概览，显示有哪些元素<br>预览模式，可以选择是否显示<br>原点坐标可以选择，一般是左上角</p>
 <p>预定义关键字，${keyword}<br>KICAD_VERSION</p>
 <p>双击title后可以选择我们预先定义好的原理图<br>位图DPI，比例缩放</p>
-<h2 id="14-Gerber文件逆向PCB"><a href="#14-Gerber文件逆向PCB" class="headerlink" title="14. Gerber文件逆向PCB"></a>14. Gerber文件逆向PCB</h2><p>1.打开Gerber文件查看器，导入.gbr和.drl文件，gbrjob是kicad生成的，别的地方不一定能用<br>文件，导出到PCB编辑器</p>
-<h2 id="15-Kicad电路仿真"><a href="#15-Kicad电路仿真" class="headerlink" title="15.Kicad电路仿真"></a>15.Kicad电路仿真</h2><p>1.点开原理图，检查，仿真<br>元件只能从Pspice中选择<br>spice只提供命令行<br>用全局标签VCC连接，防止报错<br>修改电压源的大小，需要打开spice模型<br>勾选Spice_Model可以显示电压的大小<br>电气规则检查的时候，GND不可以是输入，但是此处却是输入，所以会报错，此问题可以忽略<br>![[Pasted image 20230212174821.png]]<br>设置步长，起始时间和结束时间<br>![[Pasted image 20230212175355.png]]<br>运行之后，用探针显示相关的数据</p>
-<h2 id="16-kicad仿真正弦波，方波，脉冲"><a href="#16-kicad仿真正弦波，方波，脉冲" class="headerlink" title="16. kicad仿真正弦波，方波，脉冲"></a>16. kicad仿真正弦波，方波，脉冲</h2><p>1.spice模型编辑器，<br>无源，电容电感电阻<br>如果需要MOS管，三极管之类的，点击模型<br>如果需要220V的交流市电，点击源，瞬态分析，正弦，直流偏移0，幅度220，频率50<br>确定，仿真，添加探针<br>在修改spice模型的时候，如果添加了延时，可以仿真有源晶振，有源晶振有上电时间和稳定时间<br>![[Pasted image 20230213194557.png]]<br>阻尼因数，如果设计过MOS管相关的，AC-DC,DC-DC，是形成阻尼振荡的形态</p>
+<h1 id="14-Gerber文件逆向PCB"><a href="#14-Gerber文件逆向PCB" class="headerlink" title="14. Gerber文件逆向PCB"></a>14. Gerber文件逆向PCB</h1><p>1.打开Gerber文件查看器，导入.gbr和.drl文件，gbrjob是kicad生成的，别的地方不一定能用<br>文件，导出到PCB编辑器</p>
+<h1 id="15-Kicad电路仿真"><a href="#15-Kicad电路仿真" class="headerlink" title="15.Kicad电路仿真"></a>15.Kicad电路仿真</h1><p>1.点开原理图，检查，仿真<br>元件只能从Pspice中选择<br>spice只提供命令行<br>用全局标签VCC连接，防止报错<br>修改电压源的大小，需要打开spice模型<br>勾选Spice_Model可以显示电压的大小<br>电气规则检查的时候，GND不可以是输入，但是此处却是输入，所以会报错，此问题可以忽略<br>![[Pasted image 20230212174821.png]]<br>设置步长，起始时间和结束时间<br>![[Pasted image 20230212175355.png]]<br>运行之后，用探针显示相关的数据</p>
+<h1 id="16-kicad仿真正弦波，方波，脉冲"><a href="#16-kicad仿真正弦波，方波，脉冲" class="headerlink" title="16. kicad仿真正弦波，方波，脉冲"></a>16. kicad仿真正弦波，方波，脉冲</h1><p>1.spice模型编辑器，<br>无源，电容电感电阻<br>如果需要MOS管，三极管之类的，点击模型<br>如果需要220V的交流市电，点击源，瞬态分析，正弦，直流偏移0，幅度220，频率50<br>确定，仿真，添加探针<br>在修改spice模型的时候，如果添加了延时，可以仿真有源晶振，有源晶振有上电时间和稳定时间<br>![[Pasted image 20230213194557.png]]<br>阻尼因数，如果设计过MOS管相关的，AC-DC,DC-DC，是形成阻尼振荡的形态</p>
 <p>2.spice模型编辑的脉冲<br>初始值，0时间的值<br>脉冲宽度，1ms<br>周期需要大于脉冲宽度</p>
-<h2 id="17-Kicad添加仿真库，仿真三极管特性曲线"><a href="#17-Kicad添加仿真库，仿真三极管特性曲线" class="headerlink" title="17.Kicad添加仿真库，仿真三极管特性曲线"></a>17.Kicad添加仿真库，仿真三极管特性曲线</h2><p>1.放置三极管，去官网找</p>
+<h1 id="17-Kicad添加仿真库，仿真三极管特性曲线"><a href="#17-Kicad添加仿真库，仿真三极管特性曲线" class="headerlink" title="17.Kicad添加仿真库，仿真三极管特性曲线"></a>17.Kicad添加仿真库，仿真三极管特性曲线</h1><p>1.放置三极管，去官网找</p>
 
                 
               </div>
@@ -328,8 +326,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div></div>
-      <div>https://cathelloya.github.io/Cathelloya/2023/09/23/Kicad/</div>
+      <div>KiCad基础操作</div>
+      <div>https://cathelloya.github.io/Cathelloya/2023/09/23/Kicad-1/</div>
     </div>
     <div class="license-meta">
       
