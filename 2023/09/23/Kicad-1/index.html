@@ -1,174 +1,319 @@
-<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>KiCad基础操作 | Hexo</title><meta name="author" content="Cathelloya"><meta name="copyright" content="Cathelloya"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="1. 符号库的制作 1.新建库2.鼠标左键长按从右向左选，碰到部分即全部，从左向右选，必选全部选中才行3.引脚的属性，按tab键切换到下一个电气类型，不知道的话选择自由，三态，无源输入或输出选双向USB是差分，选择双向VCOM是内部稳压的外置滤波电容的引脚，设置为电源输出（两个电源输出相连会报错）GND选电源输入DAC_L音频输出选择输出接滤波电容和GND的选择电源输出4.库符号属性封装，选择封装">
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/Cathelloya/img/fluid.png">
+  <link rel="icon" href="/Cathelloya/img/fluid.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="Cathelloya">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="1. 符号库的制作 1.新建库2.鼠标左键长按从右向左选，碰到部分即全部，从左向右选，必选全部选中才行3.引脚的属性，按tab键切换到下一个电气类型，不知道的话选择自由，三态，无源输入或输出选双向USB是差分，选择双向VCOM是内部稳压的外置滤波电容的引脚，设置为电源输出（两个电源输出相连会报错）GND选电源输入DAC_L音频输出选择输出接滤波电容和GND的选择电源输出4.库符号属性封装，选择封装">
 <meta property="og:type" content="article">
 <meta property="og:title" content="KiCad基础操作">
 <meta property="og:url" content="https://cathelloya.github.io/Cathelloya/2023/09/23/Kicad-1/index.html">
 <meta property="og:site_name" content="Hexo">
 <meta property="og:description" content="1. 符号库的制作 1.新建库2.鼠标左键长按从右向左选，碰到部分即全部，从左向右选，必选全部选中才行3.引脚的属性，按tab键切换到下一个电气类型，不知道的话选择自由，三态，无源输入或输出选双向USB是差分，选择双向VCOM是内部稳压的外置滤波电容的引脚，设置为电源输出（两个电源输出相连会报错）GND选电源输入DAC_L音频输出选择输出接滤波电容和GND的选择电源输出4.库符号属性封装，选择封装">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png">
+<meta property="og:image" content="https://cathelloya.github.io/Cathelloya/2023/09/23/Kicad-1/pic/Pasted%20image%2020230208124112.png">
+<meta property="og:image" content="https://cathelloya.github.io/Cathelloya/2023/09/23/Kicad-1/pic/Pasted%20image%2020230208124416.png">
+<meta property="og:image" content="https://cathelloya.github.io/Cathelloya/2023/09/23/Kicad-1/pic/Pasted%20image%2020230208125127.png">
+<meta property="og:image" content="https://cathelloya.github.io/Cathelloya/2023/09/23/Kicad-1/pic/Pasted%20image%2020230208125618.png">
+<meta property="og:image" content="https://cathelloya.github.io/Cathelloya/2023/09/23/Kicad-1/pic/Pasted%20image%2020230208125923.png">
+<meta property="og:image" content="https://cathelloya.github.io/Cathelloya/2023/09/23/Kicad-1/pic/Pasted%20image%2020230208131215.png">
+<meta property="og:image" content="https://cathelloya.github.io/Cathelloya/2023/09/23/Kicad-1/pic/Pasted%20image%2020230208132433.png">
+<meta property="og:image" content="https://cathelloya.github.io/Cathelloya/2023/09/23/Kicad-1/pic/Pasted%20image%2020230208133042.png">
+<meta property="og:image" content="https://cathelloya.github.io/Cathelloya/2023/09/23/Kicad-1/pic/Pasted%20image%2020230208133914.png">
+<meta property="og:image" content="https://cathelloya.github.io/Cathelloya/2023/09/23/Kicad-1/pic/Pasted%20image%2020230208142305.png">
+<meta property="og:image" content="https://cathelloya.github.io/Cathelloya/2023/09/23/Kicad-1/pic/Pasted%20image%2020230208143125.png">
+<meta property="og:image" content="https://cathelloya.github.io/Cathelloya/2023/09/23/Kicad-1/pic/Pasted%20image%2020230208160707.png">
+<meta property="og:image" content="https://cathelloya.github.io/Cathelloya/2023/09/23/Kicad-1/pic/Pasted%20image%2020230209140634.png">
+<meta property="og:image" content="https://cathelloya.github.io/Cathelloya/2023/09/23/Kicad-1/pic/S_$JF08UL@J7N5@5E%7D54HG5.png">
+<meta property="og:image" content="https://cathelloya.github.io/Cathelloya/2023/09/23/Kicad-1/pic/Pasted%20image%2020230209165618.png">
+<meta property="og:image" content="https://cathelloya.github.io/Cathelloya/2023/09/23/Kicad-1/pic/Pasted%20image%2020230209170152.png">
+<meta property="og:image" content="https://cathelloya.github.io/Cathelloya/2023/09/23/Kicad-1/pic/Pasted%20image%2020230209172149.png">
+<meta property="og:image" content="https://cathelloya.github.io/Cathelloya/2023/09/23/Kicad-1/pic/V(%60@]Y4OM%60W[Y%7B2~%60XXW@4V.png">
+<meta property="og:image" content="https://cathelloya.github.io/Cathelloya/2023/09/23/Kicad-1/pic/Pasted%20image%2020230211204821.png">
+<meta property="og:image" content="https://cathelloya.github.io/Cathelloya/2023/09/23/Kicad-1/pic/Pasted%20image%2020230211205412.png">
+<meta property="og:image" content="https://cathelloya.github.io/Cathelloya/2023/09/23/Kicad-1/pic/Pasted%20image%2020230211210020.png">
+<meta property="og:image" content="https://cathelloya.github.io/Cathelloya/2023/09/23/Kicad-1/pic/Pasted%20image%2020230211210206.png">
+<meta property="og:image" content="https://cathelloya.github.io/Cathelloya/2023/09/23/Kicad-1/pic/Pasted%20image%2020230211211110.png">
+<meta property="og:image" content="https://cathelloya.github.io/Cathelloya/2023/09/23/Kicad-1/pic/Pasted%20image%2020230212101550.png">
+<meta property="og:image" content="https://cathelloya.github.io/Cathelloya/2023/09/23/Kicad-1/pic/Pasted%20image%2020230212102403.png">
+<meta property="og:image" content="https://cathelloya.github.io/Cathelloya/2023/09/23/Kicad-1/pic/Pasted%20image%2020230212102800.png">
+<meta property="og:image" content="https://cathelloya.github.io/Cathelloya/2023/09/23/Kicad-1/pic/Pasted%20image%2020230212150335.png">
+<meta property="og:image" content="https://cathelloya.github.io/Cathelloya/2023/09/23/Kicad-1/pic/Pasted%20image%2020230212150801.png">
+<meta property="og:image" content="https://cathelloya.github.io/Cathelloya/2023/09/23/Kicad-1/pic/Pasted%20image%2020230212151000.png">
+<meta property="og:image" content="https://cathelloya.github.io/Cathelloya/2023/09/23/Kicad-1/pic/Pasted%20image%2020230212152425.png">
+<meta property="og:image" content="https://cathelloya.github.io/Cathelloya/2023/09/23/Kicad-1/pic/Pasted%20image%2020230212174821.png">
+<meta property="og:image" content="https://cathelloya.github.io/Cathelloya/2023/09/23/Kicad-1/pic/Pasted%20image%2020230212175355.png">
+<meta property="og:image" content="https://cathelloya.github.io/Cathelloya/2023/09/23/Kicad-1/pic/Pasted%20image%2020230213194557.png">
 <meta property="article:published_time" content="2023-09-23T15:21:43.914Z">
 <meta property="article:modified_time" content="2023-09-23T15:56:21.019Z">
 <meta property="article:author" content="Cathelloya">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png"><link rel="shortcut icon" href="/Cathelloya/img/favicon.png"><link rel="canonical" href="https://cathelloya.github.io/Cathelloya/2023/09/23/Kicad-1/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/Cathelloya/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
-  root: '/Cathelloya/',
-  algolia: undefined,
-  localSearch: undefined,
-  translate: undefined,
-  noticeOutdate: undefined,
-  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
-  copy: {
-    success: '复制成功',
-    error: '复制错误',
-    noSupport: '浏览器不支持'
-  },
-  relativeDate: {
-    homepage: false,
-    post: false
-  },
-  runtime: '',
-  dateSuffix: {
-    just: '刚刚',
-    min: '分钟前',
-    hour: '小时前',
-    day: '天前',
-    month: '个月前'
-  },
-  copyright: undefined,
-  lightbox: 'fancybox',
-  Snackbar: undefined,
-  source: {
-    justifiedGallery: {
-      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.js',
-      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.css'
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://cathelloya.github.io/Cathelloya/2023/09/23/Kicad-1/pic/Pasted%20image%2020230208124112.png">
+  
+  
+  
+  <title>KiCad基础操作 - Hexo</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/Cathelloya/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/Cathelloya/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/Cathelloya/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"cathelloya.github.io","root":"/Cathelloya/","version":"1.9.5-a","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/Cathelloya/local-search.xml","include_content_in_search":true};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
     }
-  },
-  isPhotoFigcaption: false,
-  islazyload: false,
-  isAnchor: false,
-  percent: {
-    toc: true,
-    rightside: false,
-  },
-  autoDarkmode: false
-}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
-  title: 'KiCad基础操作',
-  isPost: true,
-  isHome: false,
-  isHighlightShrink: false,
-  isToc: true,
-  postUpdate: '2023-09-23 23:56:21'
-}</script><noscript><style type="text/css">
-  #nav {
-    opacity: 1
-  }
-  .justified-gallery img {
-    opacity: 1
-  }
-
-  #recent-posts time,
-  #post-meta time {
-    display: inline !important
-  }
-</style></noscript><script>(win=>{
-    win.saveToLocal = {
-      set: function setWithExpiry(key, value, ttl) {
-        if (ttl === 0) return
-        const now = new Date()
-        const expiryDay = ttl * 86400000
-        const item = {
-          value: value,
-          expiry: now.getTime() + expiryDay,
-        }
-        localStorage.setItem(key, JSON.stringify(item))
-      },
-
-      get: function getWithExpiry(key) {
-        const itemStr = localStorage.getItem(key)
-
-        if (!itemStr) {
-          return undefined
-        }
-        const item = JSON.parse(itemStr)
-        const now = new Date()
-
-        if (now.getTime() > item.expiry) {
-          localStorage.removeItem(key)
-          return undefined
-        }
-        return item.value
-      }
-    }
+  </script>
+  <script  src="/Cathelloya/js/utils.js" ></script>
+  <script  src="/Cathelloya/js/color-schema.js" ></script>
   
-    win.getScript = url => new Promise((resolve, reject) => {
-      const script = document.createElement('script')
-      script.src = url
-      script.async = true
-      script.onerror = reject
-      script.onload = script.onreadystatechange = function() {
-        const loadState = this.readyState
-        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
-        script.onload = script.onreadystatechange = null
-        resolve()
-      }
-      document.head.appendChild(script)
-    })
+
+
   
-    win.getCSS = (url,id = false) => new Promise((resolve, reject) => {
-      const link = document.createElement('link')
-      link.rel = 'stylesheet'
-      link.href = url
-      if (id) link.id = id
-      link.onerror = reject
-      link.onload = link.onreadystatechange = function() {
-        const loadState = this.readyState
-        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
-        link.onload = link.onreadystatechange = null
-        resolve()
-      }
-      document.head.appendChild(link)
-    })
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+
+<body>
   
-      win.activateDarkMode = function () {
-        document.documentElement.setAttribute('data-theme', 'dark')
-        if (document.querySelector('meta[name="theme-color"]') !== null) {
-          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
-        }
-      }
-      win.activateLightMode = function () {
-        document.documentElement.setAttribute('data-theme', 'light')
-        if (document.querySelector('meta[name="theme-color"]') !== null) {
-          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
-        }
-      }
-      const t = saveToLocal.get('theme')
+
+  <header>
     
-          if (t === 'dark') activateDarkMode()
-          else if (t === 'light') activateLightMode()
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/Cathelloya/">
+      <strong>Fluid</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
         
-      const asideStatus = saveToLocal.get('aside-status')
-      if (asideStatus !== undefined) {
-        if (asideStatus === 'hide') {
-          document.documentElement.classList.add('hide-aside')
-        } else {
-          document.documentElement.classList.remove('hide-aside')
-        }
-      }
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/Cathelloya/">
+                <i class="iconfont icon-home-fill"></i>
+                <span>首页</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/Cathelloya/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>归档</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/Cathelloya/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                <span>分类</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/Cathelloya/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>标签</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/Cathelloya/about/">
+                <i class="iconfont icon-user-fill"></i>
+                <span>关于</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/Cathelloya/img/default.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="KiCad基础操作"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
     
-    const detectApple = () => {
-      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
-        document.documentElement.classList.add('apple')
-      }
-    }
-    detectApple()
-    })(window)</script><meta name="generator" content="Hexo 6.3.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/Cathelloya/archives/"><div class="headline">文章</div><div class="length-num">4</div></a><a href="/Cathelloya/tags/"><div class="headline">标签</div><div class="length-num">0</div></a><a href="/Cathelloya/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><hr class="custom-hr"/></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header"><nav id="nav"><span id="blog-info"><a href="/Cathelloya/" title="Hexo"><span class="site-name">Hexo</span></a></span><div id="menus"><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">KiCad基础操作</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2023-09-23T15:21:43.914Z" title="发表于 2023-09-23 23:21:43">2023-09-23</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2023-09-23T15:56:21.019Z" title="更新于 2023-09-23 23:56:21">2023-09-23</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="KiCad基础操作"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1 id="1-符号库的制作"><a href="#1-符号库的制作" class="headerlink" title="1. 符号库的制作"></a>1. 符号库的制作</h1><p> 1.新建库<br><img src="pic/Pasted image 20230208124112.png" alt=""><br>2.鼠标左键长按从右向左选，碰到部分即全部，从左向右选，必选全部选中才行<br>3.引脚的属性，按tab键切换到下一个<br>电气类型，不知道的话选择自由，三态，无源<br>输入或输出选双向<br>USB是差分，选择双向<br>VCOM是内部稳压的外置滤波电容的引脚，设置为电源输出（两个电源输出相连会报错）<br>GND选电源输入<br>DAC_L音频输出选择输出<br>接滤波电容和GND的选择电源输出<br><img src="pic/Pasted image 20230208124416.png" alt=""><br>4.库符号属性<br>封装，选择封装<br>数据手册可以选择网址</p>
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2023-09-23 23:21" pubdate>
+          2023年9月23日 晚上
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          5.5k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          47 分钟
+        
+      </span>
+    
+
+    
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <h1 id="seo-header">KiCad基础操作</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <h1 id="1-符号库的制作"><a href="#1-符号库的制作" class="headerlink" title="1. 符号库的制作"></a>1. 符号库的制作</h1><p> 1.新建库<br><img src="pic/Pasted image 20230208124112.png" srcset="/Cathelloya/img/loading.gif" lazyload alt=""><br>2.鼠标左键长按从右向左选，碰到部分即全部，从左向右选，必选全部选中才行<br>3.引脚的属性，按tab键切换到下一个<br>电气类型，不知道的话选择自由，三态，无源<br>输入或输出选双向<br>USB是差分，选择双向<br>VCOM是内部稳压的外置滤波电容的引脚，设置为电源输出（两个电源输出相连会报错）<br>GND选电源输入<br>DAC_L音频输出选择输出<br>接滤波电容和GND的选择电源输出<br><img src="pic/Pasted image 20230208124416.png" srcset="/Cathelloya/img/loading.gif" lazyload alt=""><br>4.库符号属性<br>封装，选择封装<br>数据手册可以选择网址</p>
 <p>封装筛选器，SO-16<em>,SOP-16</em> 筛选和关键字相关的</p>
 <p>描述，描述功能，支持中文<br>关键字，最好用英文</p>
 <p>编辑spice模型，用于电路仿真</p>
-<p>Package…不可见，位置随便放<br><img src="pic/Pasted image 20230208125127.png" alt=""><br>5.在原理图中按下a放置并且查看属性<br><img src="pic/Pasted image 20230208125618.png" alt=""></p>
-<h1 id="2-封装库的制作"><a href="#2-封装库的制作" class="headerlink" title="2. 封装库的制作"></a>2. 封装库的制作</h1><p>1.新建库，新建封装，选择贴片，保存至新建的库中<br>2.画出矩形框（比数据手册略大也是可以的），放置焊盘，按下e<br>选择焊盘类型<br>焊盘编号，即焊盘上面的数字<br>设置位置X<br>设置焊盘的尺寸<br>从通孔偏移形状，因为光标的中心不一定和几何中心重合，比如这个左偏0.35mm<br><img src="pic/Pasted image 20230208125923.png" alt=""><br>3.对焊盘按下ctrl+D,同时进行了复制粘贴<br>鼠标右键，特殊工具，精确移动，快捷键shift+M，输入移动的距离<br>鼠标右键，特殊工具，创建阵列<br><img src="pic/Pasted image 20230208131215.png" alt=""><br>4.空白处右键，焊盘重新编号，按顺序点击焊盘<br>5.天线处因为需要天线保护隔离，电磁干扰屏蔽，信号强度，所以需要keepout area<br>创建不规则焊盘，选择弧线<br>但是只能画一个大概，如果精度要求高，需要email厂家索要.dxf文件，然后文件-&gt;导入-&gt;图形<br>6.从选取创建多边形，我们画的是分开的，而创建的多边形是一体的<br><img src="pic/Pasted image 20230208132433.png" alt=""><br>7.焊盘2是GND,把焊盘2放入那个多边形，选择多边形，层选择cu，填充形状<br>选择焊盘2，按两下crtl+E</p>
-<p><img src="pic/Pasted image 20230208133042.png" alt=""><br>8.养成良好的习惯，选择丝印层，在焊盘1处放置一个圆圈，不能离焊盘太近<br>选择F.Courtyard顶层封装层，稍大一些，框选中焊盘<br>丝印放在焊盘上会有警报，调整方法<br>（1）删除警报：）<br>（2）丝印仅保留未被焊盘覆盖的区域，删除被遮挡的部分<br><img src="pic/Pasted image 20230208133914.png" alt=""></p>
-<h1 id="3-绘制原理图PCB布线全流程"><a href="#3-绘制原理图PCB布线全流程" class="headerlink" title="3. 绘制原理图PCB布线全流程"></a>3. 绘制原理图PCB布线全流程</h1><p> 原理图<br>1.图框的设置，双击title<br>2.放置<br>有极性的电容，搜索c_p<br>保险，f<br>选中，按下G，可以拖动<br>3.同一个网络标签可以通过高亮来显示<br>添加连接的图形线I<br>4.位号分配，批注原理图<br>5.分配封装，可以多选元器件，封装筛选，双击<br><img src="pic/Pasted image 20230208142305.png" alt=""><br>6.电气规则检查<br>如果引脚确实不需要连接，按下Q<br>按照自己的规则，编辑原理图设置<br>或者右击错误，排除<br><img src="pic/Pasted image 20230208143125.png" alt=""><br> PCB<br>1.导入.dxf文件，也就是板框文件，如果是freecad,opencad,proecad可以直接用，如果是autocad导出的，要按下X进行打散，否则会乱<br>选择放置的层，简单的一般在Edge.Cuts层<br>比较复杂的可以先放在User.Drawing层，然后一点一点的搬运到Edge.Cuts层<br>测量一下尺寸有没有问题<br>按下ALT+3，进入3D视图，如果是未封闭图形会报错<br>2.电子元件向下对齐，下指的是元件的下边缘，也就是后选择上去的元件<br>获取和移动封装，t，name<br>布线预设-&gt;预定义尺寸<br>              -&gt;网络类表<br>按下V快速添加过孔<br>3.敷铜，填充区，敷铜优先级0最低，按下B填充<br>间隙和最小宽度改下<br>焊盘连接 防热焊盘-&gt;防回流焊<br>进行电器规则的检查<br><img src="pic/Pasted image 20230208160707.png" alt=""><br>4.如果还是非封闭图形，隐藏所有层，只显示edge.cut层<br>若看不见，则调细边框<br>5.导出，导出step，给结构的配型<br>制造输出，BOM<br>                 .pos元件放置，用在SMT贴片<br>gerber打板文件，生成层文件和过孔文件</p>
+<p>Package…不可见，位置随便放<br><img src="pic/Pasted image 20230208125127.png" srcset="/Cathelloya/img/loading.gif" lazyload alt=""><br>5.在原理图中按下a放置并且查看属性<br><img src="pic/Pasted image 20230208125618.png" srcset="/Cathelloya/img/loading.gif" lazyload alt=""></p>
+<h1 id="2-封装库的制作"><a href="#2-封装库的制作" class="headerlink" title="2. 封装库的制作"></a>2. 封装库的制作</h1><p>1.新建库，新建封装，选择贴片，保存至新建的库中<br>2.画出矩形框（比数据手册略大也是可以的），放置焊盘，按下e<br>选择焊盘类型<br>焊盘编号，即焊盘上面的数字<br>设置位置X<br>设置焊盘的尺寸<br>从通孔偏移形状，因为光标的中心不一定和几何中心重合，比如这个左偏0.35mm<br><img src="pic/Pasted image 20230208125923.png" srcset="/Cathelloya/img/loading.gif" lazyload alt=""><br>3.对焊盘按下ctrl+D,同时进行了复制粘贴<br>鼠标右键，特殊工具，精确移动，快捷键shift+M，输入移动的距离<br>鼠标右键，特殊工具，创建阵列<br><img src="pic/Pasted image 20230208131215.png" srcset="/Cathelloya/img/loading.gif" lazyload alt=""><br>4.空白处右键，焊盘重新编号，按顺序点击焊盘<br>5.天线处因为需要天线保护隔离，电磁干扰屏蔽，信号强度，所以需要keepout area<br>创建不规则焊盘，选择弧线<br>但是只能画一个大概，如果精度要求高，需要email厂家索要.dxf文件，然后文件-&gt;导入-&gt;图形<br>6.从选取创建多边形，我们画的是分开的，而创建的多边形是一体的<br><img src="pic/Pasted image 20230208132433.png" srcset="/Cathelloya/img/loading.gif" lazyload alt=""><br>7.焊盘2是GND,把焊盘2放入那个多边形，选择多边形，层选择cu，填充形状<br>选择焊盘2，按两下crtl+E</p>
+<p><img src="pic/Pasted image 20230208133042.png" srcset="/Cathelloya/img/loading.gif" lazyload alt=""><br>8.养成良好的习惯，选择丝印层，在焊盘1处放置一个圆圈，不能离焊盘太近<br>选择F.Courtyard顶层封装层，稍大一些，框选中焊盘<br>丝印放在焊盘上会有警报，调整方法<br>（1）删除警报：）<br>（2）丝印仅保留未被焊盘覆盖的区域，删除被遮挡的部分<br><img src="pic/Pasted image 20230208133914.png" srcset="/Cathelloya/img/loading.gif" lazyload alt=""></p>
+<h1 id="3-绘制原理图PCB布线全流程"><a href="#3-绘制原理图PCB布线全流程" class="headerlink" title="3. 绘制原理图PCB布线全流程"></a>3. 绘制原理图PCB布线全流程</h1><p> 原理图<br>1.图框的设置，双击title<br>2.放置<br>有极性的电容，搜索c_p<br>保险，f<br>选中，按下G，可以拖动<br>3.同一个网络标签可以通过高亮来显示<br>添加连接的图形线I<br>4.位号分配，批注原理图<br>5.分配封装，可以多选元器件，封装筛选，双击<br><img src="pic/Pasted image 20230208142305.png" srcset="/Cathelloya/img/loading.gif" lazyload alt=""><br>6.电气规则检查<br>如果引脚确实不需要连接，按下Q<br>按照自己的规则，编辑原理图设置<br>或者右击错误，排除<br><img src="pic/Pasted image 20230208143125.png" srcset="/Cathelloya/img/loading.gif" lazyload alt=""><br> PCB<br>1.导入.dxf文件，也就是板框文件，如果是freecad,opencad,proecad可以直接用，如果是autocad导出的，要按下X进行打散，否则会乱<br>选择放置的层，简单的一般在Edge.Cuts层<br>比较复杂的可以先放在User.Drawing层，然后一点一点的搬运到Edge.Cuts层<br>测量一下尺寸有没有问题<br>按下ALT+3，进入3D视图，如果是未封闭图形会报错<br>2.电子元件向下对齐，下指的是元件的下边缘，也就是后选择上去的元件<br>获取和移动封装，t，name<br>布线预设-&gt;预定义尺寸<br>              -&gt;网络类表<br>按下V快速添加过孔<br>3.敷铜，填充区，敷铜优先级0最低，按下B填充<br>间隙和最小宽度改下<br>焊盘连接 防热焊盘-&gt;防回流焊<br>进行电器规则的检查<br><img src="pic/Pasted image 20230208160707.png" srcset="/Cathelloya/img/loading.gif" lazyload alt=""><br>4.如果还是非封闭图形，隐藏所有层，只显示edge.cut层<br>若看不见，则调细边框<br>5.导出，导出step，给结构的配型<br>制造输出，BOM<br>                 .pos元件放置，用在SMT贴片<br>gerber打板文件，生成层文件和过孔文件</p>
 <h1 id="4-导出导入3D模型"><a href="#4-导出导入3D模型" class="headerlink" title="4. 导出导入3D模型"></a>4. 导出导入3D模型</h1><p>1.封装属性，导入<br>2.打开FreeCAD<br>展开start，选择sketch<br>文件，新建<br>新建图纸，XY<br>show grid，画一个正方形，左侧close<br>展开sketch，选择part<br>点击sketch，点击Extrude，设置along高度<br>导出export<br>3.在符号编辑器导入封装，原理图，更新PCB<br>放置网格原点<br>4.在PCB文件，导出，STEP，注意勾选替换相似文件<br>5.<a href="www.3dcontentcentral.cn">一些3D封装模型的网站</a><br>kicad支持比较好的是.step，版本推荐AP214<br>[2023.2.8]</p>
 <h1 id="5-制作一个USB隔离器"><a href="#5-制作一个USB隔离器" class="headerlink" title="5. 制作一个USB隔离器"></a>5. 制作一个USB隔离器</h1><p>1.单独的为USB供电</p>
 <p>B0505LS金升阳，输入电压4.5V-5.5V，输出电压5V，输出电流200mA，输出负载不能小于额定负载    的10%，可以在输出端并联一个电阻接地<br>SL2.1A，适用于USB1.1，读取不太好</p>
@@ -176,26 +321,367 @@
 <p>AutoCAD的文件.dwg转换为KiCAD可以读取的文件，使用LibreCAD软件（主要偏向于2D）<br>导入.dwg文件后连续按两下鼠标中键，或者按下视图自动缩放，保存R12<br>打开Kicad，导入.dxf文件，放入User.Drawing层，默认线宽可以调小一点，防止不封闭<br>打开Edge.cuts层，画出电路板的轮廓<br>如果需要有洞，方法一 在Kicad画出一个轮廓；方法二 从右往左框选中圆，ctrl+D，e，移到Edge.cuts层</p>
 <p>差分线的布线，布线，差分对交互布线（需要确保差分对网络以N/P或+/-结尾）<br>修改差分对设置，在电路板设置，预定义网络，按下6布线</p>
 <p>AUM的具体接法参见数据手册，去ADI官网<a target="_blank" rel="noopener" href="https://www.analog.com/cn/index.html">ADI公司 | 混合信号和数字信号处理IC | 亚德诺半导体 (analog.com)</a>，产品</p>
-<p>在丝印层上划一道线，自己切割<br>芯片下方开槽，防止爬电（爬电距离：两相邻导体或一个导体与相邻电机壳表面的沿绝绝缘表面测量的最短距离）<br><img src="pic/Pasted image 20230209140634.png" alt=""><br>2.导出PCB<br>生成gerber文件<br><img src="pic/S_$JF08UL@J7N5@5E}54HG5.png" alt=""><br>焊盘层只是SMT的焊盘，或者叫钢网，开钢网所需要的文件<br>阻焊层不仅要阻焊到SMT，通孔的焊盘也要阻焊到</p>
+<p>在丝印层上划一道线，自己切割<br>芯片下方开槽，防止爬电（爬电距离：两相邻导体或一个导体与相邻电机壳表面的沿绝绝缘表面测量的最短距离）<br><img src="pic/Pasted image 20230209140634.png" srcset="/Cathelloya/img/loading.gif" lazyload alt=""><br>2.导出PCB<br>生成gerber文件<br><img src="pic/S_$JF08UL@J7N5@5E}54HG5.png" srcset="/Cathelloya/img/loading.gif" lazyload alt=""><br>焊盘层只是SMT的焊盘，或者叫钢网，开钢网所需要的文件<br>阻焊层不仅要阻焊到SMT，通孔的焊盘也要阻焊到</p>
 <p>生成BOM文件，格式选择csv，可以直接看</p>
 <h1 id="6-显示模式的设置"><a href="#6-显示模式的设置" class="headerlink" title="6. 显示模式的设置"></a>6. 显示模式的设置</h1><p>1.左侧<br>网格显示<br>（1）左侧最上面，是否显示网格点<br>（2）偏好设置，显示选项，网格样式<br>极坐标和笛卡尔坐标的切换，基本兼容了<br>大十字光标<br>飞线显示开关<br>用曲线显示飞线<br>在正常和暗显之间切换非活动图层，在做好布局之后，可以快速预览布局<br>切换高亮网络，一般用ctrl+鼠标左键就可以了<br>敷铜，选择网络，比如F.Cu，画出敷铜范围，按下B进行填充。在右侧的层，对象中可以设置敷铜的透明度<br>在轮廓下显示焊盘，这样只显示轮廓的边缘，好处，（1）减轻显卡的压力；（2）拖拉元件时方便检查锐角的情况<br>轮廓显示过孔<br>显示外观管理器，即右侧的菜单<br>2.右侧<br>对象，调整布线，敷铜的透明度，是否显示飞线等等。若要修改网格的颜色，偏好设置，颜色，主题，退出只读模式</p>
-<h1 id="7-单端交互式布线详解"><a href="#7-单端交互式布线详解" class="headerlink" title="7. 单端交互式布线详解"></a>7. 单端交互式布线详解</h1><p>1.Kicad6.0自动布线已经无了<br>布线，交互式布线设置<br>高亮碰撞，违反了电器规则后会显示绿色，右侧也可以更改模式<br>在多条布线集中的区域调整走线的路径，修改的时候使用推挤模式更合适<br>自由角度模式，从结点出发的任何角度都可以布线，用于实在没办法的时候<br>优化焊盘的连接，自动找焊盘连接<br>移除多余的布线，选择一个最优布线，删除多余的布线，但是在环状的布线下不要使用<br>允许违反DRC，在不想改规则的时候，慎用<br><img src="pic/Pasted image 20230209165618.png" alt=""><br>最小间距设置，在电路板或者文件，设计规则，约束，铜层，最小布线宽度<br>最小环形宽度，过孔，通孔焊盘中间打孔到边缘的距离<br><img src="pic/Pasted image 20230209170152.png" alt=""><br>删除布线，选中后按delete，删除整个网络的线，按下shift+delete<br>调整布线的走向，按下/键<br>选择绕走模式，自动优化出一条布线<br>圆弧形布线，按下ctrl+/<br>2.设置线宽<br>（1）布线的时候按下e，输入布线的宽度（按下D，拖动，布线不会断开）<br>（2）使用网络宽度和预定义，按下W可以在布线的时候快速的切换，按shift+w反顺序调整<br>布线时按下V切换顶层和底层<br>电路板设置，网络类表<br>可以在网络名称筛选出模糊搜索，应用筛选，选择新网络VDD，分配到所有列出的网络<br><img src="pic/Pasted image 20230209172149.png" alt=""><br>双击布线可以显示宽度等信息</p>
-<h1 id="8-PCB敷铜-amp-开天窗"><a href="#8-PCB敷铜-amp-开天窗" class="headerlink" title="8.PCB敷铜&amp;开天窗"></a>8.PCB敷铜&amp;开天窗</h1><p>1.双绞线卷起来，对差模信号可以起到抗干扰的作用，让干扰同步<br>ctrl+b，取消填充敷铜，只剩边界<br>敷铜区属性，间隙，两条相邻的走线的距离；最小宽度，大于此才会敷铜<br>焊盘连接<br>（1）防热（花焊盘），如果全敷的话，因为铜的导热性比较好，会将热量散发出去，不与焊接<br>（2）金属化过孔焊盘，放散热，在SMT时<br>（3）<br><img src="pic/V(`@]Y4OM`W[Y{2~`XXW@4V.png" alt=""><br>（4）网状图案敷铜，在AC-DC电源板或单面板，包封焊？的时候比较有用，在过锡炉的时候比较有用。因为铜的膨胀系数和环氧板的膨胀系数不一样，同的热胀率远高于纸板或FR-4，会造成铜面鼓包，也考虑到电磁影响，<br>网格宽度指线宽，网格间隙，一般是方格，大小是设置值平方<br>方向指角度<br>平滑效果，详细见软件<br>为什么不能出现钝角，直角？因为加工精度的问题<br>删除孤铜，一般选从不，如果想要，可以放一个过孔<br>轮廓线显示，可以修改。。<br>转角处理，倒角5mm，以敷铜的边界线5mm的边界，而不是电路板的<br>右击敷铜的边界，创建拐角，然后就可以去拉了<br>锁定，点击覆盖锁定还是可以拖动的<br>敷铜的优先级，敷铜会绕开优先级比较高的，一般来说地线优先级最低</p>
+<h1 id="7-单端交互式布线详解"><a href="#7-单端交互式布线详解" class="headerlink" title="7. 单端交互式布线详解"></a>7. 单端交互式布线详解</h1><p>1.Kicad6.0自动布线已经无了<br>布线，交互式布线设置<br>高亮碰撞，违反了电器规则后会显示绿色，右侧也可以更改模式<br>在多条布线集中的区域调整走线的路径，修改的时候使用推挤模式更合适<br>自由角度模式，从结点出发的任何角度都可以布线，用于实在没办法的时候<br>优化焊盘的连接，自动找焊盘连接<br>移除多余的布线，选择一个最优布线，删除多余的布线，但是在环状的布线下不要使用<br>允许违反DRC，在不想改规则的时候，慎用<br><img src="pic/Pasted image 20230209165618.png" srcset="/Cathelloya/img/loading.gif" lazyload alt=""><br>最小间距设置，在电路板或者文件，设计规则，约束，铜层，最小布线宽度<br>最小环形宽度，过孔，通孔焊盘中间打孔到边缘的距离<br><img src="pic/Pasted image 20230209170152.png" srcset="/Cathelloya/img/loading.gif" lazyload alt=""><br>删除布线，选中后按delete，删除整个网络的线，按下shift+delete<br>调整布线的走向，按下/键<br>选择绕走模式，自动优化出一条布线<br>圆弧形布线，按下ctrl+/<br>2.设置线宽<br>（1）布线的时候按下e，输入布线的宽度（按下D，拖动，布线不会断开）<br>（2）使用网络宽度和预定义，按下W可以在布线的时候快速的切换，按shift+w反顺序调整<br>布线时按下V切换顶层和底层<br>电路板设置，网络类表<br>可以在网络名称筛选出模糊搜索，应用筛选，选择新网络VDD，分配到所有列出的网络<br><img src="pic/Pasted image 20230209172149.png" srcset="/Cathelloya/img/loading.gif" lazyload alt=""><br>双击布线可以显示宽度等信息</p>
+<h1 id="8-PCB敷铜-amp-开天窗"><a href="#8-PCB敷铜-amp-开天窗" class="headerlink" title="8.PCB敷铜&amp;开天窗"></a>8.PCB敷铜&amp;开天窗</h1><p>1.双绞线卷起来，对差模信号可以起到抗干扰的作用，让干扰同步<br>ctrl+b，取消填充敷铜，只剩边界<br>敷铜区属性，间隙，两条相邻的走线的距离；最小宽度，大于此才会敷铜<br>焊盘连接<br>（1）防热（花焊盘），如果全敷的话，因为铜的导热性比较好，会将热量散发出去，不与焊接<br>（2）金属化过孔焊盘，放散热，在SMT时<br>（3）<br><img src="pic/V(`@]Y4OM`W[Y{2~`XXW@4V.png" srcset="/Cathelloya/img/loading.gif" lazyload alt=""><br>（4）网状图案敷铜，在AC-DC电源板或单面板，包封焊？的时候比较有用，在过锡炉的时候比较有用。因为铜的膨胀系数和环氧板的膨胀系数不一样，同的热胀率远高于纸板或FR-4，会造成铜面鼓包，也考虑到电磁影响，<br>网格宽度指线宽，网格间隙，一般是方格，大小是设置值平方<br>方向指角度<br>平滑效果，详细见软件<br>为什么不能出现钝角，直角？因为加工精度的问题<br>删除孤铜，一般选从不，如果想要，可以放一个过孔<br>轮廓线显示，可以修改。。<br>转角处理，倒角5mm，以敷铜的边界线5mm的边界，而不是电路板的<br>右击敷铜的边界，创建拐角，然后就可以去拉了<br>锁定，点击覆盖锁定还是可以拖动的<br>敷铜的优先级，敷铜会绕开优先级比较高的，一般来说地线优先级最低</p>
 <p>2.开天窗作用，露出铜，可以镀上喷漆你，增加导流性，不喷漆可以提高散热<br>开天窗开在阻焊层，选择F.Mark和B.Mark，绘制形状，绘制的区域不喷阻焊；矩形区域划画出后按下E填充</p>
 <h1 id="9-绘制金手指"><a href="#9-绘制金手指" class="headerlink" title="9. 绘制金手指"></a>9. 绘制金手指</h1><p>1.SMT需要注意基准点，绘制金手指的时候按照图纸的来就行<br>打开封装编辑器<br>NGFF-75PIN-0.5MM-B-KEY-EDGE 相邻两个焊盘的中心是0.5MM；B-KEY是它的子系列，edge是板边<br>通孔，直插入<br>在板框层绘制，画一条直线，设置起点和终点，ctrl+D，设置起点和终点<br>同一层绘制的直线有吸附作用<br>移动时只捕捉弧心，点击弧上的捕捉点，按下M<br>线段的输入坐标可以输入运算式<br>按下M移动的时候，改用shift+M，可以输入移动的距离</p>
 <p>放置焊盘的时候选择板边连接器<br>多个焊盘，选中，按下F切换到底层，右击，复制默认属性，粘贴</p>
 <p>在silk层可以做标记<br>因为这个不需要，所以在BOM和SMT坐标文件里面排除</p>
-<h1 id="10-原理图的连接"><a href="#10-原理图的连接" class="headerlink" title="10. 原理图的连接"></a>10. 原理图的连接</h1><p>1.不用的端口按Q放置<br>添加节点J，交叉的线通过这个可以进行连接，用网络高亮进行检查<br>insert可以自动插入等长等参数的线<br>语法帮助<br><img src="pic/Pasted image 20230211204821.png" alt=""><br>前缀 D[0..7]<br>{网络1 网络2}<br>按下Z添加总线入口到总线，按B添加总线<br><img src="pic/Pasted image 20230211205412.png" alt=""><br>输入总线名称BUS[0..15]<br><img src="pic/Pasted image 20230211210020.png" alt=""><br>实际上总线的名称要和标签相互对应，之后将总线直接相连<br>PA类似于数组，不可变的是PA，可变的是0..15，相连后只和对应的数字进行匹配<br>好处是方便阅读原理图，使界面相对简洁<br><img src="pic/Pasted image 20230211210206.png" alt=""><br>网络类，<br>内部展开<br>SPI{MOSI MISO CLK CS[0..3]}<br>SPI.MOSI SPI.MISO SPI.CLK SPI.CS0 SPI.CS1 SPI.CS2 SPI.CS3<br><img src="pic/Pasted image 20230211211110.png" alt=""></p>
-<h1 id="11-多原理图的连接"><a href="#11-多原理图的连接" class="headerlink" title="11.多原理图的连接"></a>11.多原理图的连接</h1><p>1.ctrl+L添加全局标签<br>网络标签，在当前的原理同中，多张原理图用全局标签，但是会比较乱<br>分层标签，<br>添加分层图框，可以分模块化<br><img src="pic/Pasted image 20230212101550.png" alt=""><br>这样就有了分页原理图的一个入口，双击进入，右击可以离开分页<br>所有的gnd，3.3V都是全局标签<br>普通标签不能跨原理图<br><img src="pic/Pasted image 20230212102403.png" alt=""><br>ctrl+f可以查找标签<br>添加一个分层标签H，本层原理图和其它原理图的连接端口，在分层原理图中添加分层标签，离开后点击导入分层图框引脚<br><img src="pic/Pasted image 20230212102800.png" alt=""><br>上排图标，显示原理图的连接结构</p>
-<h1 id="12-PCB参数计算"><a href="#12-PCB参数计算" class="headerlink" title="12.PCB参数计算"></a>12.PCB参数计算</h1><p>1.过孔外径，在PCB计算器中通过过孔计算出电流的大小<br>间隙孔直径，相当于铜的直径<br>温升，允许温升为10℃的时侯计算得出的数值<br>脉冲上升时间，也就是过孔过多高的频率<br>工业上一般不会多过孔，至少是双过孔，防止温升，腐蚀<br><img src="pic/Pasted image 20230212150335.png" alt=""><br>2.布线宽度<br>双层板设置外层布线，多层板设置内层布线，线路厚度外层通常比内层要厚<br><img src="pic/Pasted image 20230212150801.png" alt=""><br>3.电气间距<br>大一个等级会好一点？<br><img src="pic/Pasted image 20230212151000.png" alt=""><br>4.电路板类别<br><img src="pic/Pasted image 20230212152425.png" alt=""><br>电源类的，大电流类的以布线宽度为标准<br>数据线，以传输为标准</p>
+<h1 id="10-原理图的连接"><a href="#10-原理图的连接" class="headerlink" title="10. 原理图的连接"></a>10. 原理图的连接</h1><p>1.不用的端口按Q放置<br>添加节点J，交叉的线通过这个可以进行连接，用网络高亮进行检查<br>insert可以自动插入等长等参数的线<br>语法帮助<br><img src="pic/Pasted image 20230211204821.png" srcset="/Cathelloya/img/loading.gif" lazyload alt=""><br>前缀 D[0..7]<br>{网络1 网络2}<br>按下Z添加总线入口到总线，按B添加总线<br><img src="pic/Pasted image 20230211205412.png" srcset="/Cathelloya/img/loading.gif" lazyload alt=""><br>输入总线名称BUS[0..15]<br><img src="pic/Pasted image 20230211210020.png" srcset="/Cathelloya/img/loading.gif" lazyload alt=""><br>实际上总线的名称要和标签相互对应，之后将总线直接相连<br>PA类似于数组，不可变的是PA，可变的是0..15，相连后只和对应的数字进行匹配<br>好处是方便阅读原理图，使界面相对简洁<br><img src="pic/Pasted image 20230211210206.png" srcset="/Cathelloya/img/loading.gif" lazyload alt=""><br>网络类，<br>内部展开<br>SPI{MOSI MISO CLK CS[0..3]}<br>SPI.MOSI SPI.MISO SPI.CLK SPI.CS0 SPI.CS1 SPI.CS2 SPI.CS3<br><img src="pic/Pasted image 20230211211110.png" srcset="/Cathelloya/img/loading.gif" lazyload alt=""></p>
+<h1 id="11-多原理图的连接"><a href="#11-多原理图的连接" class="headerlink" title="11.多原理图的连接"></a>11.多原理图的连接</h1><p>1.ctrl+L添加全局标签<br>网络标签，在当前的原理同中，多张原理图用全局标签，但是会比较乱<br>分层标签，<br>添加分层图框，可以分模块化<br><img src="pic/Pasted image 20230212101550.png" srcset="/Cathelloya/img/loading.gif" lazyload alt=""><br>这样就有了分页原理图的一个入口，双击进入，右击可以离开分页<br>所有的gnd，3.3V都是全局标签<br>普通标签不能跨原理图<br><img src="pic/Pasted image 20230212102403.png" srcset="/Cathelloya/img/loading.gif" lazyload alt=""><br>ctrl+f可以查找标签<br>添加一个分层标签H，本层原理图和其它原理图的连接端口，在分层原理图中添加分层标签，离开后点击导入分层图框引脚<br><img src="pic/Pasted image 20230212102800.png" srcset="/Cathelloya/img/loading.gif" lazyload alt=""><br>上排图标，显示原理图的连接结构</p>
+<h1 id="12-PCB参数计算"><a href="#12-PCB参数计算" class="headerlink" title="12.PCB参数计算"></a>12.PCB参数计算</h1><p>1.过孔外径，在PCB计算器中通过过孔计算出电流的大小<br>间隙孔直径，相当于铜的直径<br>温升，允许温升为10℃的时侯计算得出的数值<br>脉冲上升时间，也就是过孔过多高的频率<br>工业上一般不会多过孔，至少是双过孔，防止温升，腐蚀<br><img src="pic/Pasted image 20230212150335.png" srcset="/Cathelloya/img/loading.gif" lazyload alt=""><br>2.布线宽度<br>双层板设置外层布线，多层板设置内层布线，线路厚度外层通常比内层要厚<br><img src="pic/Pasted image 20230212150801.png" srcset="/Cathelloya/img/loading.gif" lazyload alt=""><br>3.电气间距<br>大一个等级会好一点？<br><img src="pic/Pasted image 20230212151000.png" srcset="/Cathelloya/img/loading.gif" lazyload alt=""><br>4.电路板类别<br><img src="pic/Pasted image 20230212152425.png" srcset="/Cathelloya/img/loading.gif" lazyload alt=""><br>电源类的，大电流类的以布线宽度为标准<br>数据线，以传输为标准</p>
 <p>过孔外径，如果是电源类的，大电流的，不考虑脉冲上升时间了，考虑成品通孔直径，镀层厚度，过孔长度（板子的厚度），间隙孔直径。注意，此处没有给出过孔开天窗的电流和过孔塞锡的电流，因为这个和加工的工艺有很大的关系，建议和加工厂进行联系</p>
 <h1 id="13-原理图图纸编辑，关键字，变量的应用"><a href="#13-原理图图纸编辑，关键字，变量的应用" class="headerlink" title="13.原理图图纸编辑，关键字，变量的应用"></a>13.原理图图纸编辑，关键字，变量的应用</h1><p>1.修改原理图图框，双击title，进入图框设置<br>LOGO右侧倒数第二个，可以添加图片</p>
 <p>2.图纸编辑器<br>检查，显示设计检查器，相当于把一个概览，显示有哪些元素<br>预览模式，可以选择是否显示<br>原点坐标可以选择，一般是左上角</p>
 <p>预定义关键字，${keyword}<br>KICAD_VERSION</p>
 <p>双击title后可以选择我们预先定义好的原理图<br>位图DPI，比例缩放</p>
 <h1 id="14-Gerber文件逆向PCB"><a href="#14-Gerber文件逆向PCB" class="headerlink" title="14. Gerber文件逆向PCB"></a>14. Gerber文件逆向PCB</h1><p>1.打开Gerber文件查看器，导入.gbr和.drl文件，gbrjob是kicad生成的，别的地方不一定能用<br>文件，导出到PCB编辑器</p>
-<h1 id="15-Kicad电路仿真"><a href="#15-Kicad电路仿真" class="headerlink" title="15.Kicad电路仿真"></a>15.Kicad电路仿真</h1><p>1.点开原理图，检查，仿真<br>元件只能从Pspice中选择<br>spice只提供命令行<br>用全局标签VCC连接，防止报错<br>修改电压源的大小，需要打开spice模型<br>勾选Spice_Model可以显示电压的大小<br>电气规则检查的时候，GND不可以是输入，但是此处却是输入，所以会报错，此问题可以忽略<br><img src="pic/Pasted image 20230212174821.png" alt=""><br>设置步长，起始时间和结束时间<br><img src="pic/Pasted image 20230212175355.png" alt=""><br>运行之后，用探针显示相关的数据</p>
-<h1 id="16-kicad仿真正弦波，方波，脉冲"><a href="#16-kicad仿真正弦波，方波，脉冲" class="headerlink" title="16. kicad仿真正弦波，方波，脉冲"></a>16. kicad仿真正弦波，方波，脉冲</h1><p>1.spice模型编辑器，<br>无源，电容电感电阻<br>如果需要MOS管，三极管之类的，点击模型<br>如果需要220V的交流市电，点击源，瞬态分析，正弦，直流偏移0，幅度220，频率50<br>确定，仿真，添加探针<br>在修改spice模型的时候，如果添加了延时，可以仿真有源晶振，有源晶振有上电时间和稳定时间<br><img src="pic/Pasted image 20230213194557.png" alt=""><br>阻尼因数，如果设计过MOS管相关的，AC-DC,DC-DC，是形成阻尼振荡的形态</p>
+<h1 id="15-Kicad电路仿真"><a href="#15-Kicad电路仿真" class="headerlink" title="15.Kicad电路仿真"></a>15.Kicad电路仿真</h1><p>1.点开原理图，检查，仿真<br>元件只能从Pspice中选择<br>spice只提供命令行<br>用全局标签VCC连接，防止报错<br>修改电压源的大小，需要打开spice模型<br>勾选Spice_Model可以显示电压的大小<br>电气规则检查的时候，GND不可以是输入，但是此处却是输入，所以会报错，此问题可以忽略<br><img src="pic/Pasted image 20230212174821.png" srcset="/Cathelloya/img/loading.gif" lazyload alt=""><br>设置步长，起始时间和结束时间<br><img src="pic/Pasted image 20230212175355.png" srcset="/Cathelloya/img/loading.gif" lazyload alt=""><br>运行之后，用探针显示相关的数据</p>
+<h1 id="16-kicad仿真正弦波，方波，脉冲"><a href="#16-kicad仿真正弦波，方波，脉冲" class="headerlink" title="16. kicad仿真正弦波，方波，脉冲"></a>16. kicad仿真正弦波，方波，脉冲</h1><p>1.spice模型编辑器，<br>无源，电容电感电阻<br>如果需要MOS管，三极管之类的，点击模型<br>如果需要220V的交流市电，点击源，瞬态分析，正弦，直流偏移0，幅度220，频率50<br>确定，仿真，添加探针<br>在修改spice模型的时候，如果添加了延时，可以仿真有源晶振，有源晶振有上电时间和稳定时间<br><img src="pic/Pasted image 20230213194557.png" srcset="/Cathelloya/img/loading.gif" lazyload alt=""><br>阻尼因数，如果设计过MOS管相关的，AC-DC,DC-DC，是形成阻尼振荡的形态</p>
 <p>2.spice模型编辑的脉冲<br>初始值，0时间的值<br>脉冲宽度，1ms<br>周期需要大于脉冲宽度</p>
 <h1 id="17-Kicad添加仿真库，仿真三极管特性曲线"><a href="#17-Kicad添加仿真库，仿真三极管特性曲线" class="headerlink" title="17.Kicad添加仿真库，仿真三极管特性曲线"></a>17.Kicad添加仿真库，仿真三极管特性曲线</h1><p>1.放置三极管，去官网找</p>
-</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="https://cathelloya.github.io/Cathelloya">Cathelloya</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://cathelloya.github.io/Cathelloya/2023/09/23/Kicad-1/">https://cathelloya.github.io/Cathelloya/2023/09/23/Kicad-1/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://cathelloya.github.io/Cathelloya" target="_blank">Hexo</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"></div><div class="post_share"><div class="social-share" data-image="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/Cathelloya/2023/11/20/%E4%B8%80%E4%B8%AA%E6%80%9D%E8%80%83/" title="关于信息论的一些思考"><div class="cover" style="background: var(--default-bg-color)"></div><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">关于信息论的一些思考</div></div></a></div><div class="next-post pull-right"><a href="/Cathelloya/2023/09/23/Git%20%E6%8C%87%E4%BB%A4/" title="Git基础指令"><div class="cover" style="background: var(--default-bg-color)"></div><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">Git基础指令</div></div></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png" onerror="this.onerror=null;this.src='/Cathelloya/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">Cathelloya</div><div class="author-info__description"></div></div><div class="card-info-data site-data is-center"><a href="/Cathelloya/archives/"><div class="headline">文章</div><div class="length-num">4</div></a><a href="/Cathelloya/tags/"><div class="headline">标签</div><div class="length-num">0</div></a><a href="/Cathelloya/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#1-%E7%AC%A6%E5%8F%B7%E5%BA%93%E7%9A%84%E5%88%B6%E4%BD%9C"><span class="toc-number">1.</span> <span class="toc-text">1. 符号库的制作</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2-%E5%B0%81%E8%A3%85%E5%BA%93%E7%9A%84%E5%88%B6%E4%BD%9C"><span class="toc-number">2.</span> <span class="toc-text">2. 封装库的制作</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#3-%E7%BB%98%E5%88%B6%E5%8E%9F%E7%90%86%E5%9B%BEPCB%E5%B8%83%E7%BA%BF%E5%85%A8%E6%B5%81%E7%A8%8B"><span class="toc-number">3.</span> <span class="toc-text">3. 绘制原理图PCB布线全流程</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#4-%E5%AF%BC%E5%87%BA%E5%AF%BC%E5%85%A53D%E6%A8%A1%E5%9E%8B"><span class="toc-number">4.</span> <span class="toc-text">4. 导出导入3D模型</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#5-%E5%88%B6%E4%BD%9C%E4%B8%80%E4%B8%AAUSB%E9%9A%94%E7%A6%BB%E5%99%A8"><span class="toc-number">5.</span> <span class="toc-text">5. 制作一个USB隔离器</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#6-%E6%98%BE%E7%A4%BA%E6%A8%A1%E5%BC%8F%E7%9A%84%E8%AE%BE%E7%BD%AE"><span class="toc-number">6.</span> <span class="toc-text">6. 显示模式的设置</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#7-%E5%8D%95%E7%AB%AF%E4%BA%A4%E4%BA%92%E5%BC%8F%E5%B8%83%E7%BA%BF%E8%AF%A6%E8%A7%A3"><span class="toc-number">7.</span> <span class="toc-text">7. 单端交互式布线详解</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#8-PCB%E6%95%B7%E9%93%9C-amp-%E5%BC%80%E5%A4%A9%E7%AA%97"><span class="toc-number">8.</span> <span class="toc-text">8.PCB敷铜&amp;开天窗</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#9-%E7%BB%98%E5%88%B6%E9%87%91%E6%89%8B%E6%8C%87"><span class="toc-number">9.</span> <span class="toc-text">9. 绘制金手指</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#10-%E5%8E%9F%E7%90%86%E5%9B%BE%E7%9A%84%E8%BF%9E%E6%8E%A5"><span class="toc-number">10.</span> <span class="toc-text">10. 原理图的连接</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#11-%E5%A4%9A%E5%8E%9F%E7%90%86%E5%9B%BE%E7%9A%84%E8%BF%9E%E6%8E%A5"><span class="toc-number">11.</span> <span class="toc-text">11.多原理图的连接</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#12-PCB%E5%8F%82%E6%95%B0%E8%AE%A1%E7%AE%97"><span class="toc-number">12.</span> <span class="toc-text">12.PCB参数计算</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#13-%E5%8E%9F%E7%90%86%E5%9B%BE%E5%9B%BE%E7%BA%B8%E7%BC%96%E8%BE%91%EF%BC%8C%E5%85%B3%E9%94%AE%E5%AD%97%EF%BC%8C%E5%8F%98%E9%87%8F%E7%9A%84%E5%BA%94%E7%94%A8"><span class="toc-number">13.</span> <span class="toc-text">13.原理图图纸编辑，关键字，变量的应用</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#14-Gerber%E6%96%87%E4%BB%B6%E9%80%86%E5%90%91PCB"><span class="toc-number">14.</span> <span class="toc-text">14. Gerber文件逆向PCB</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#15-Kicad%E7%94%B5%E8%B7%AF%E4%BB%BF%E7%9C%9F"><span class="toc-number">15.</span> <span class="toc-text">15.Kicad电路仿真</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#16-kicad%E4%BB%BF%E7%9C%9F%E6%AD%A3%E5%BC%A6%E6%B3%A2%EF%BC%8C%E6%96%B9%E6%B3%A2%EF%BC%8C%E8%84%89%E5%86%B2"><span class="toc-number">16.</span> <span class="toc-text">16. kicad仿真正弦波，方波，脉冲</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#17-Kicad%E6%B7%BB%E5%8A%A0%E4%BB%BF%E7%9C%9F%E5%BA%93%EF%BC%8C%E4%BB%BF%E7%9C%9F%E4%B8%89%E6%9E%81%E7%AE%A1%E7%89%B9%E6%80%A7%E6%9B%B2%E7%BA%BF"><span class="toc-number">17.</span> <span class="toc-text">17.Kicad添加仿真库，仿真三极管特性曲线</span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/Cathelloya/2023/11/20/%E4%B8%80%E4%B8%AA%E6%80%9D%E8%80%83/" title="关于信息论的一些思考">关于信息论的一些思考</a><time datetime="2023-11-20T09:51:49.272Z" title="发表于 2023-11-20 17:51:49">2023-11-20</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/Cathelloya/2023/09/23/Kicad-1/" title="KiCad基础操作">KiCad基础操作</a><time datetime="2023-09-23T15:21:43.914Z" title="发表于 2023-09-23 23:21:43">2023-09-23</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/Cathelloya/2023/09/23/Git%20%E6%8C%87%E4%BB%A4/" title="Git基础指令">Git基础指令</a><time datetime="2023-09-23T08:57:04.472Z" title="发表于 2023-09-23 16:57:04">2023-09-23</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/Cathelloya/2023/09/23/hello-world/" title="Hello World">Hello World</a><time datetime="2023-09-23T07:32:59.861Z" title="发表于 2023-09-23 15:32:59">2023-09-23</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2023 By Cathelloya</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/Cathelloya/js/utils.js"></script><script src="/Cathelloya/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.umd.min.js"></script><div class="js-pjax"></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>KiCad基础操作</div>
+      <div>https://cathelloya.github.io/Cathelloya/2023/09/23/Kicad-1/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>Cathelloya</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2023年9月23日</div>
+        </div>
+      
+      
+      
+        <div class="license-meta-item">
+          <div>许可协议</div>
+          <div>
+            
+              
+              
+                <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                    <i class="iconfont icon-by"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/Cathelloya/2023/11/20/%E4%B8%80%E4%B8%AA%E6%80%9D%E8%80%83/" title="关于信息论的一些思考">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">关于信息论的一些思考</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/Cathelloya/2023/09/23/Git%20%E6%8C%87%E4%BB%A4/" title="Git基础指令">
+                        <span class="hidden-mobile">Git基础指令</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>目录</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+    </div>
+  
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.4/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/Cathelloya/js/events.js" ></script>
+<script  src="/Cathelloya/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/Cathelloya/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.20.1/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/4.3.1/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script  src="/Cathelloya/js/local-search.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/Cathelloya/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+</body>
+</html>

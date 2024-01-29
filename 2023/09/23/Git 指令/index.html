@@ -1,188 +1,299 @@
-<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>Git基础指令 | Hexo</title><meta name="author" content="Cathelloya"><meta name="copyright" content="Cathelloya"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="以下内容来自Learn Git Branching 0.常用小指令粘贴代码到git，shift+insert 1.Git主要命令提交分支1git commit 新建分支1git branch bugFix 切换到该分支1git checkout bugFix 合并分支1.如果你基于主分支master新建了分支dev，再基于dev分支新建了一个分支test，在test分支开发完成后，需要将test合">
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/Cathelloya/img/fluid.png">
+  <link rel="icon" href="/Cathelloya/img/fluid.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="Cathelloya">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="以下内容来自Learn Git Branching 0.常用小指令粘贴代码到git，shift+insert 1.Git主要命令提交分支1git commit 新建分支1git branch bugFix 切换到该分支1git checkout bugFix 合并分支1.如果你基于主分支master新建了分支dev，再基于dev分支新建了一个分支test，在test分支开发完成后，需要将test合">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Git基础指令">
 <meta property="og:url" content="https://cathelloya.github.io/Cathelloya/2023/09/23/Git%20%E6%8C%87%E4%BB%A4/index.html">
 <meta property="og:site_name" content="Hexo">
 <meta property="og:description" content="以下内容来自Learn Git Branching 0.常用小指令粘贴代码到git，shift+insert 1.Git主要命令提交分支1git commit 新建分支1git branch bugFix 切换到该分支1git checkout bugFix 合并分支1.如果你基于主分支master新建了分支dev，再基于dev分支新建了一个分支test，在test分支开发完成后，需要将test合">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png">
 <meta property="article:published_time" content="2023-09-23T08:57:04.472Z">
 <meta property="article:modified_time" content="2023-09-23T14:59:33.339Z">
 <meta property="article:author" content="Cathelloya">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png"><link rel="shortcut icon" href="/Cathelloya/img/favicon.png"><link rel="canonical" href="https://cathelloya.github.io/Cathelloya/2023/09/23/Git%20%E6%8C%87%E4%BB%A4/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/Cathelloya/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
-  root: '/Cathelloya/',
-  algolia: undefined,
-  localSearch: undefined,
-  translate: undefined,
-  noticeOutdate: undefined,
-  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
-  copy: {
-    success: '复制成功',
-    error: '复制错误',
-    noSupport: '浏览器不支持'
-  },
-  relativeDate: {
-    homepage: false,
-    post: false
-  },
-  runtime: '',
-  dateSuffix: {
-    just: '刚刚',
-    min: '分钟前',
-    hour: '小时前',
-    day: '天前',
-    month: '个月前'
-  },
-  copyright: undefined,
-  lightbox: 'fancybox',
-  Snackbar: undefined,
-  source: {
-    justifiedGallery: {
-      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.js',
-      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.css'
+<meta name="twitter:card" content="summary_large_image">
+  
+  
+  
+  <title>Git基础指令 - Hexo</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/Cathelloya/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/Cathelloya/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/Cathelloya/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"cathelloya.github.io","root":"/Cathelloya/","version":"1.9.5-a","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/Cathelloya/local-search.xml","include_content_in_search":true};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
     }
-  },
-  isPhotoFigcaption: false,
-  islazyload: false,
-  isAnchor: false,
-  percent: {
-    toc: true,
-    rightside: false,
-  },
-  autoDarkmode: false
-}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
-  title: 'Git基础指令',
-  isPost: true,
-  isHome: false,
-  isHighlightShrink: false,
-  isToc: true,
-  postUpdate: '2023-09-23 22:59:33'
-}</script><noscript><style type="text/css">
-  #nav {
-    opacity: 1
-  }
-  .justified-gallery img {
-    opacity: 1
-  }
-
-  #recent-posts time,
-  #post-meta time {
-    display: inline !important
-  }
-</style></noscript><script>(win=>{
-    win.saveToLocal = {
-      set: function setWithExpiry(key, value, ttl) {
-        if (ttl === 0) return
-        const now = new Date()
-        const expiryDay = ttl * 86400000
-        const item = {
-          value: value,
-          expiry: now.getTime() + expiryDay,
-        }
-        localStorage.setItem(key, JSON.stringify(item))
-      },
-
-      get: function getWithExpiry(key) {
-        const itemStr = localStorage.getItem(key)
-
-        if (!itemStr) {
-          return undefined
-        }
-        const item = JSON.parse(itemStr)
-        const now = new Date()
-
-        if (now.getTime() > item.expiry) {
-          localStorage.removeItem(key)
-          return undefined
-        }
-        return item.value
-      }
-    }
+  </script>
+  <script  src="/Cathelloya/js/utils.js" ></script>
+  <script  src="/Cathelloya/js/color-schema.js" ></script>
   
-    win.getScript = url => new Promise((resolve, reject) => {
-      const script = document.createElement('script')
-      script.src = url
-      script.async = true
-      script.onerror = reject
-      script.onload = script.onreadystatechange = function() {
-        const loadState = this.readyState
-        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
-        script.onload = script.onreadystatechange = null
-        resolve()
-      }
-      document.head.appendChild(script)
-    })
+
+
   
-    win.getCSS = (url,id = false) => new Promise((resolve, reject) => {
-      const link = document.createElement('link')
-      link.rel = 'stylesheet'
-      link.href = url
-      if (id) link.id = id
-      link.onerror = reject
-      link.onload = link.onreadystatechange = function() {
-        const loadState = this.readyState
-        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
-        link.onload = link.onreadystatechange = null
-        resolve()
-      }
-      document.head.appendChild(link)
-    })
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+
+<body>
   
-      win.activateDarkMode = function () {
-        document.documentElement.setAttribute('data-theme', 'dark')
-        if (document.querySelector('meta[name="theme-color"]') !== null) {
-          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
-        }
-      }
-      win.activateLightMode = function () {
-        document.documentElement.setAttribute('data-theme', 'light')
-        if (document.querySelector('meta[name="theme-color"]') !== null) {
-          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
-        }
-      }
-      const t = saveToLocal.get('theme')
+
+  <header>
     
-          if (t === 'dark') activateDarkMode()
-          else if (t === 'light') activateLightMode()
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/Cathelloya/">
+      <strong>Fluid</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
         
-      const asideStatus = saveToLocal.get('aside-status')
-      if (asideStatus !== undefined) {
-        if (asideStatus === 'hide') {
-          document.documentElement.classList.add('hide-aside')
-        } else {
-          document.documentElement.classList.remove('hide-aside')
-        }
-      }
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/Cathelloya/">
+                <i class="iconfont icon-home-fill"></i>
+                <span>首页</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/Cathelloya/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>归档</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/Cathelloya/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                <span>分类</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/Cathelloya/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>标签</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/Cathelloya/about/">
+                <i class="iconfont icon-user-fill"></i>
+                <span>关于</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/Cathelloya/img/default.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="Git基础指令"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
     
-    const detectApple = () => {
-      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
-        document.documentElement.classList.add('apple')
-      }
-    }
-    detectApple()
-    })(window)</script><meta name="generator" content="Hexo 6.3.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/Cathelloya/archives/"><div class="headline">文章</div><div class="length-num">4</div></a><a href="/Cathelloya/tags/"><div class="headline">标签</div><div class="length-num">0</div></a><a href="/Cathelloya/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><hr class="custom-hr"/></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header"><nav id="nav"><span id="blog-info"><a href="/Cathelloya/" title="Hexo"><span class="site-name">Hexo</span></a></span><div id="menus"><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">Git基础指令</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2023-09-23T08:57:04.472Z" title="发表于 2023-09-23 16:57:04">2023-09-23</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2023-09-23T14:59:33.339Z" title="更新于 2023-09-23 22:59:33">2023-09-23</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="Git基础指令"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><p>以下内容来自<a target="_blank" rel="noopener" href="https://learngitbranching.js.org/?locale=zh_CN">Learn Git Branching</a></p>
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2023-09-23 16:57" pubdate>
+          2023年9月23日 下午
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          3.2k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          27 分钟
+        
+      </span>
+    
+
+    
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <h1 id="seo-header">Git基础指令</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <p>以下内容来自<a target="_blank" rel="noopener" href="https://learngitbranching.js.org/?locale=zh_CN">Learn Git Branching</a></p>
 <h1 id="0-常用小指令"><a href="#0-常用小指令" class="headerlink" title="0.常用小指令"></a>0.常用小指令</h1><p>粘贴代码到git，shift+insert</p>
-<h1 id="1-Git主要命令"><a href="#1-Git主要命令" class="headerlink" title="1.Git主要命令"></a>1.Git主要命令</h1><h2 id="提交分支"><a href="#提交分支" class="headerlink" title="提交分支"></a>提交分支</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git commit</span><br></pre></td></tr></table></figure>
-<h2 id="新建分支"><a href="#新建分支" class="headerlink" title="新建分支"></a>新建分支</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git branch bugFix</span><br></pre></td></tr></table></figure>
-<h2 id="切换到该分支"><a href="#切换到该分支" class="headerlink" title="切换到该分支"></a>切换到该分支</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git checkout bugFix</span><br></pre></td></tr></table></figure>
+<h1 id="1-Git主要命令"><a href="#1-Git主要命令" class="headerlink" title="1.Git主要命令"></a>1.Git主要命令</h1><h2 id="提交分支"><a href="#提交分支" class="headerlink" title="提交分支"></a>提交分支</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs git">git commit<br></code></pre></td></tr></table></figure>
+<h2 id="新建分支"><a href="#新建分支" class="headerlink" title="新建分支"></a>新建分支</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs git">git branch bugFix<br></code></pre></td></tr></table></figure>
+<h2 id="切换到该分支"><a href="#切换到该分支" class="headerlink" title="切换到该分支"></a>切换到该分支</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs git">git checkout bugFix<br></code></pre></td></tr></table></figure>
 <h2 id="合并分支"><a href="#合并分支" class="headerlink" title="合并分支"></a>合并分支</h2><p>1.如果你基于主分支master新建了分支dev，再基于dev分支新建了一个分支test，在test分支开发完成后，需要将test合并到dev分支上。此时，先用git branch 查看自己在哪个分支上，然后git checkout dev(切换到需要合并的分支上)，最后git merge test（在dev分支上执行这句，意思是将test合并到dev分支上）</p>
-<p>首先checkout到main上，然后再<br><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git merge bugFix</span><br></pre></td></tr></table></figure></p>
-<p>2.在bugFix分支上使用<br><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git rebase main</span><br></pre></td></tr></table></figure><br>项目更加线性</p>
-<h1 id="2-分离HEAD"><a href="#2-分离HEAD" class="headerlink" title="2.分离HEAD"></a>2.分离HEAD</h1><p>在 <em>main</em> 的基础上继续<br><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git checkout C4</span><br></pre></td></tr></table></figure></p>
+<p>首先checkout到main上，然后再<br><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs git">git merge bugFix<br></code></pre></td></tr></table></figure></p>
+<p>2.在bugFix分支上使用<br><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs git">git rebase main<br></code></pre></td></tr></table></figure><br>项目更加线性</p>
+<h1 id="2-分离HEAD"><a href="#2-分离HEAD" class="headerlink" title="2.分离HEAD"></a>2.分离HEAD</h1><p>在 <em>main</em> 的基础上继续<br><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs git">git checkout C4<br></code></pre></td></tr></table></figure></p>
 <h2 id="相对引用"><a href="#相对引用" class="headerlink" title="相对引用"></a>相对引用</h2><ul>
 <li>使用 <code>^</code> 向上移动 1 个提交记录</li>
-<li>使用 <code>~&lt;num&gt;</code> 向上移动多个提交记录，如 <code>~3</code><br><strong>以下代码将HEAD移动到指定的位置</strong><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git checkout bugFix^</span><br></pre></td></tr></table></figure>
+<li>使用 <code>~&lt;num&gt;</code> 向上移动多个提交记录，如 <code>~3</code><br><strong>以下代码将HEAD移动到指定的位置</strong><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs git">git checkout bugFix^<br></code></pre></td></tr></table></figure>
 </li>
 </ul>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git checkout bugFix~1</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs git">git checkout bugFix~1<br></code></pre></td></tr></table></figure>
 <p><strong>以下代码将指定的brach移动到指定的位置</strong><br>我使用相对引用最多的就是移动分支。可以直接使用 <code>-f</code> 选项让分支指向另一个提交。例如:</p>
 <p><code>git branch -f main HEAD~3</code></p>
 <p>上面的命令会将 main 分支强制指向 HEAD 的第 3 级 parent 提交。</p>
 <h2 id="撤销变更"><a href="#撤销变更" class="headerlink" title="撤销变更"></a>撤销变更</h2><p>主要有两种方法用来撤销变更 —— 一是 <code>git reset</code>，还有就是 <code>git revert</code>。<br>要完成此关，分别撤销 <code>local</code> 分支和 <code>pushed</code> 分支上的最近一次提交。共需要撤销两个提交（每个分支一个）。<br>记住 <code>pushed</code> 是远程分支，<code>local</code> 是本地分支 —— 这么说你应该知道用分别哪种方法了吧？</p>
-<p><strong>对于本地的撤销</strong><br><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git reset HEAD~1</span><br></pre></td></tr></table></figure><br><strong>对于远程的撤销</strong><br><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">get revert HEAD~1</span><br></pre></td></tr></table></figure></p>
-<h1 id="3-自由修改提交树"><a href="#3-自由修改提交树" class="headerlink" title="3.自由修改提交树"></a>3.自由修改提交树</h1><h2 id="整理提交记录"><a href="#整理提交记录" class="headerlink" title="整理提交记录"></a>整理提交记录</h2><p>从HEAD指向的地方增加C2’ C3’ C4’<br><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git cherry-pick C2 C3 C4</span><br></pre></td></tr></table></figure></p>
-<h2 id="交互式的rebase"><a href="#交互式的rebase" class="headerlink" title="交互式的rebase"></a>交互式的rebase</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git rebase -i HEAD~4</span><br></pre></td></tr></table></figure>
+<p><strong>对于本地的撤销</strong><br><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs git">git reset HEAD~1<br></code></pre></td></tr></table></figure><br><strong>对于远程的撤销</strong><br><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs git">get revert HEAD~1<br></code></pre></td></tr></table></figure></p>
+<h1 id="3-自由修改提交树"><a href="#3-自由修改提交树" class="headerlink" title="3.自由修改提交树"></a>3.自由修改提交树</h1><h2 id="整理提交记录"><a href="#整理提交记录" class="headerlink" title="整理提交记录"></a>整理提交记录</h2><p>从HEAD指向的地方增加C2’ C3’ C4’<br><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs git">git cherry-pick C2 C3 C4<br></code></pre></td></tr></table></figure></p>
+<h2 id="交互式的rebase"><a href="#交互式的rebase" class="headerlink" title="交互式的rebase"></a>交互式的rebase</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs git">git rebase -i HEAD~4<br></code></pre></td></tr></table></figure>
 <h2 id="本地栈式提交"><a href="#本地栈式提交" class="headerlink" title="本地栈式提交"></a>本地栈式提交</h2><p>….</p>
 <h2 id="提交的技巧"><a href="#提交的技巧" class="headerlink" title="提交的技巧"></a>提交的技巧</h2><p>我们可以通过下面的方法来克服困难：</p>
 <ul>
@@ -193,7 +304,7 @@
 </ul>
 <p>当然完成这个任务的方法不止上面提到的一种（我知道你在看 cherry-pick 啦），之后我们会多点关注这些技巧啦，但现在暂时只专注上面这种方法。 最后有必要说明一下目标状态中的那几个<code>&#39;</code> —— 我们把这个提交移动了两次，每移动一次会产生一个 <code>&#39;</code>；而 C2 上多出来的那个是我们在使用了 amend 参数提交时产生的，所以最终结果就是这样了。</p>
 <p>也就是说，我在对比结果的时候只会对比提交树的结构，对于 <code>&#39;</code> 的数量上的不同，并不纳入对比范围内。只要你的 <code>main</code> 分支结构与目标结构相同，我就算你通过。</p>
-<h2 id="git-tag"><a href="#git-tag" class="headerlink" title="git tag"></a>git tag</h2><p>给c1打上v1的标签<br><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git tag v1 c1</span><br></pre></td></tr></table></figure></p>
+<h2 id="git-tag"><a href="#git-tag" class="headerlink" title="git tag"></a>git tag</h2><p>给c1打上v1的标签<br><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs git">git tag v1 c1<br></code></pre></td></tr></table></figure></p>
 <h2 id="git-describe"><a href="#git-describe" class="headerlink" title="git describe"></a>git describe</h2><p><code>git describe</code> 的​​语法是：</p>
 <p><code>git describe &lt;ref&gt;</code></p>
 <p><code>&lt;ref&gt;</code> 可以是任何能被 Git 识别成提交记录的引用，如果你没有指定的话，Git 会使用你目前所在的位置（<code>HEAD</code>）。</p>
@@ -201,25 +312,366 @@
 <p><code>&lt;tag&gt;_&lt;numCommits&gt;_g&lt;hash&gt;</code></p>
 <p><code>tag</code> 表示的是离 <code>ref</code> 最近的标签， <code>numCommits</code> 是表示这个 <code>ref</code> 与 <code>tag</code> 相差有多少个提交记录， <code>hash</code> 表示的是你所给定的 <code>ref</code> 所表示的提交记录哈希值的前几位。</p>
 <p>当 <code>ref</code> 提交记录上有某个标签时，则只输出标签名称</p>
-<h1 id="4-多次rebase的用法"><a href="#4-多次rebase的用法" class="headerlink" title="4.多次rebase的用法"></a>4.多次rebase的用法</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">git rebase master bugFix</span><br><span class="line">git rebase bugFix side</span><br><span class="line">git rebase side another</span><br><span class="line">git branch -f master another</span><br></pre></td></tr></table></figure>
-<h2 id="返回上个时遇到两个父节点"><a href="#返回上个时遇到两个父节点" class="headerlink" title="返回上个时遇到两个父节点"></a>返回上个时遇到两个父节点</h2><p>HEAD~首先回到上一层<br>^2 会优先选择较新的节点<br>^   会优先选择较早的节点<br><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git branch bugWork HEAD~^2~</span><br></pre></td></tr></table></figure></p>
-<h1 id="5-远程仓库"><a href="#5-远程仓库" class="headerlink" title="5.远程仓库"></a>5.远程仓库</h1><h2 id="克隆代码"><a href="#克隆代码" class="headerlink" title="克隆代码"></a>克隆代码</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone</span><br></pre></td></tr></table></figure>
-<h2 id="远程分支"><a href="#远程分支" class="headerlink" title="远程分支"></a>远程分支</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git commit</span><br><span class="line">git checkout o/main</span><br><span class="line">git commit</span><br></pre></td></tr></table></figure>
-<h2 id="一键下载"><a href="#一键下载" class="headerlink" title="一键下载"></a>一键下载</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git fetch</span><br></pre></td></tr></table></figure>
-<h2 id="git-pull"><a href="#git-pull" class="headerlink" title="git pull"></a>git pull</h2><p>以下两种方式是等价的<br><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git pull</span><br></pre></td></tr></table></figure></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git fetch</span><br><span class="line">git merge o/main</span><br></pre></td></tr></table></figure>
-<h2 id="模拟团队合作"><a href="#模拟团队合作" class="headerlink" title="模拟团队合作"></a>模拟团队合作</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">git clone</span><br><span class="line">git fakeTeamwork 2</span><br><span class="line">git commit</span><br><span class="line">git pull</span><br></pre></td></tr></table></figure>
-<h2 id="git-push一键上传"><a href="#git-push一键上传" class="headerlink" title="git push一键上传"></a>git push一键上传</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git push</span><br></pre></td></tr></table></figure>
-<h2 id="偏离的提交历史"><a href="#偏离的提交历史" class="headerlink" title="偏离的提交历史"></a>偏离的提交历史</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">git clone</span><br><span class="line">git fakeTeamwork 1</span><br><span class="line">git commit</span><br><span class="line">git pull --rebase</span><br><span class="line">git push</span><br></pre></td></tr></table></figure>
+<h1 id="4-多次rebase的用法"><a href="#4-多次rebase的用法" class="headerlink" title="4.多次rebase的用法"></a>4.多次rebase的用法</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs git">git rebase master bugFix<br>git rebase bugFix side<br>git rebase side another<br>git branch -f master another<br></code></pre></td></tr></table></figure>
+<h2 id="返回上个时遇到两个父节点"><a href="#返回上个时遇到两个父节点" class="headerlink" title="返回上个时遇到两个父节点"></a>返回上个时遇到两个父节点</h2><p>HEAD~首先回到上一层<br>^2 会优先选择较新的节点<br>^   会优先选择较早的节点<br><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs git">git branch bugWork HEAD~^2~<br></code></pre></td></tr></table></figure></p>
+<h1 id="5-远程仓库"><a href="#5-远程仓库" class="headerlink" title="5.远程仓库"></a>5.远程仓库</h1><h2 id="克隆代码"><a href="#克隆代码" class="headerlink" title="克隆代码"></a>克隆代码</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs git">git clone<br></code></pre></td></tr></table></figure>
+<h2 id="远程分支"><a href="#远程分支" class="headerlink" title="远程分支"></a>远程分支</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs git">git commit<br>git checkout o/main<br>git commit<br></code></pre></td></tr></table></figure>
+<h2 id="一键下载"><a href="#一键下载" class="headerlink" title="一键下载"></a>一键下载</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs git">git fetch<br></code></pre></td></tr></table></figure>
+<h2 id="git-pull"><a href="#git-pull" class="headerlink" title="git pull"></a>git pull</h2><p>以下两种方式是等价的<br><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs git">git pull<br></code></pre></td></tr></table></figure></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs git">git fetch<br>git merge o/main<br></code></pre></td></tr></table></figure>
+<h2 id="模拟团队合作"><a href="#模拟团队合作" class="headerlink" title="模拟团队合作"></a>模拟团队合作</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs git">git clone<br>git fakeTeamwork 2<br>git commit<br>git pull<br></code></pre></td></tr></table></figure>
+<h2 id="git-push一键上传"><a href="#git-push一键上传" class="headerlink" title="git push一键上传"></a>git push一键上传</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs git">git push<br></code></pre></td></tr></table></figure>
+<h2 id="偏离的提交历史"><a href="#偏离的提交历史" class="headerlink" title="偏离的提交历史"></a>偏离的提交历史</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs git">git clone<br>git fakeTeamwork 1<br>git commit<br>git pull --rebase<br>git push<br></code></pre></td></tr></table></figure>
 <h2 id="远程服务器拒绝-Remote-Rejected"><a href="#远程服务器拒绝-Remote-Rejected" class="headerlink" title="远程服务器拒绝!(Remote Rejected)"></a>远程服务器拒绝!(Remote Rejected)</h2><p>如果你是在一个大的合作团队中工作, 很可能是main被锁定了, 需要一些Pull Request流程来合并修改。如果你直接提交(commit)到本地main, 然后试图推送(push)修改, 你将会收到这样类似的信息:</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">! [远程服务器拒绝] main -&gt; main (TF402455: 不允许推送(push)这个分支; 你必须使用pull request来更新这个分支.)</span><br></pre></td></tr></table></figure>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git reset o/main</span><br><span class="line">git checkout -b feature c2</span><br><span class="line">git push origin feature</span><br></pre></td></tr></table></figure>
-<h1 id="6-关于origin和它的周边"><a href="#6-关于origin和它的周边" class="headerlink" title="6.关于origin和它的周边"></a>6.关于origin和它的周边</h1><h2 id="推送主分支-rebase"><a href="#推送主分支-rebase" class="headerlink" title="推送主分支 rebase"></a>推送主分支 <code>rebase</code></h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">git fetch</span><br><span class="line">git rebase o/master side1</span><br><span class="line">git rebase side1 side2</span><br><span class="line">git rebase side2 side3</span><br><span class="line">git rebase side3 master</span><br><span class="line">git push</span><br></pre></td></tr></table></figure>
-<h2 id="推送主分支-merge"><a href="#推送主分支-merge" class="headerlink" title="推送主分支 merge"></a>推送主分支 <code>merge</code></h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">git checkout master</span><br><span class="line">git pull origin master</span><br><span class="line">git merge side1</span><br><span class="line">git merge side2</span><br><span class="line">git merge side3</span><br><span class="line">git push origin master</span><br></pre></td></tr></table></figure>
-<h2 id="远程跟踪-创建一个名为foo的分支跟踪o-main"><a href="#远程跟踪-创建一个名为foo的分支跟踪o-main" class="headerlink" title="远程跟踪,创建一个名为foo的分支跟踪o/main"></a>远程跟踪,创建一个名为foo的分支跟踪o/main</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git checkout -b foo o/main</span><br><span class="line">git pull</span><br></pre></td></tr></table></figure>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs css">! <span class="hljs-selector-attr">[远程服务器拒绝]</span> <span class="hljs-selector-tag">main</span> -&gt; <span class="hljs-selector-tag">main</span> (TF402455: 不允许推送(push)这个分支; 你必须使用pull request来更新这个分支.)<br></code></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs ad-note">git reset o/main<br>git checkout -b feature c2<br>git push origin feature<br></code></pre></td></tr></table></figure>
+<h1 id="6-关于origin和它的周边"><a href="#6-关于origin和它的周边" class="headerlink" title="6.关于origin和它的周边"></a>6.关于origin和它的周边</h1><h2 id="推送主分支-rebase"><a href="#推送主分支-rebase" class="headerlink" title="推送主分支 rebase"></a>推送主分支 <code>rebase</code></h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs git">git fetch<br>git rebase o/master side1<br>git rebase side1 side2<br>git rebase side2 side3<br>git rebase side3 master<br>git push<br></code></pre></td></tr></table></figure>
+<h2 id="推送主分支-merge"><a href="#推送主分支-merge" class="headerlink" title="推送主分支 merge"></a>推送主分支 <code>merge</code></h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs git">git checkout master<br>git pull origin master<br>git merge side1<br>git merge side2<br>git merge side3<br>git push origin master<br></code></pre></td></tr></table></figure>
+<h2 id="远程跟踪-创建一个名为foo的分支跟踪o-main"><a href="#远程跟踪-创建一个名为foo的分支跟踪o-main" class="headerlink" title="远程跟踪,创建一个名为foo的分支跟踪o/main"></a>远程跟踪,创建一个名为foo的分支跟踪o/main</h2><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs css">git checkout -<span class="hljs-selector-tag">b</span> foo o/<span class="hljs-selector-tag">main</span><br>git pull<br></code></pre></td></tr></table></figure>
 <p>另一种设置远程追踪分支的方法就是使用：<code>git branch -u</code> 命令，执行：<br><code>git branch -u o/main foo</code><br>这样 <code>foo</code> 就会跟踪 <code>o/main</code> 了。如果当前就在 foo 分支上, 还可以省略 foo：<br><code>git branch -u o/main</code></p>
-<p>这边的git pull —rebase会产生c3’,git pull会产生c4<br><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">git checkout -b side o/master / git branch -f side master</span><br><span class="line">git commit</span><br><span class="line">git pull --rebase</span><br><span class="line">git push</span><br></pre></td></tr></table></figure></p>
-<h2 id="git更新指定仓库"><a href="#git更新指定仓库" class="headerlink" title="git更新指定仓库"></a>git更新指定仓库</h2><p>用本地的分支main更新远程仓库origin中的分支main<br><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git push origin main</span><br></pre></td></tr></table></figure></p>
+<p>这边的git pull —rebase会产生c3’,git pull会产生c4<br><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs git">git checkout -b side o/master / git branch -f side master<br>git commit<br>git pull --rebase<br>git push<br></code></pre></td></tr></table></figure></p>
+<h2 id="git更新指定仓库"><a href="#git更新指定仓库" class="headerlink" title="git更新指定仓库"></a>git更新指定仓库</h2><p>用本地的分支main更新远程仓库origin中的分支main<br><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs git">git push origin main<br></code></pre></td></tr></table></figure></p>
 <p>要同时为源和目的地指定 <code>&lt;place&gt;</code> 的话，只需要用冒号 <code>:</code> 将二者连起来就可以了：<br><code>git push origin &lt;source&gt;:&lt;destination&gt;</code><br>这个参数实际的值是个 refspec，“refspec” 是一个自造的词，意思是 Git 能识别的位置（比如分支 <code>foo</code> 或者 <code>HEAD~1</code>）<br>一旦你指定了独立的来源和目的地，就可以组织出言简意赅的远程操作命令了，让我们看看演示！</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git push origin master</span><br><span class="line">git push origin foo</span><br></pre></td></tr></table></figure>
-<h2 id="git-pull参数"><a href="#git-pull参数" class="headerlink" title="git pull参数"></a>git pull参数</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git pull origin bar:foo</span><br><span class="line">git pull origin master:side</span><br></pre></td></tr></table></figure></article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="https://cathelloya.github.io/Cathelloya">Cathelloya</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://cathelloya.github.io/Cathelloya/2023/09/23/Git%20%E6%8C%87%E4%BB%A4/">https://cathelloya.github.io/Cathelloya/2023/09/23/Git%20%E6%8C%87%E4%BB%A4/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://cathelloya.github.io/Cathelloya" target="_blank">Hexo</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"></div><div class="post_share"><div class="social-share" data-image="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/Cathelloya/2023/09/23/Kicad-1/" title="KiCad基础操作"><div class="cover" style="background: var(--default-bg-color)"></div><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">KiCad基础操作</div></div></a></div><div class="next-post pull-right"><a href="/Cathelloya/2023/09/23/hello-world/" title="Hello World"><div class="cover" style="background: var(--default-bg-color)"></div><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">Hello World</div></div></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png" onerror="this.onerror=null;this.src='/Cathelloya/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">Cathelloya</div><div class="author-info__description"></div></div><div class="card-info-data site-data is-center"><a href="/Cathelloya/archives/"><div class="headline">文章</div><div class="length-num">4</div></a><a href="/Cathelloya/tags/"><div class="headline">标签</div><div class="length-num">0</div></a><a href="/Cathelloya/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#0-%E5%B8%B8%E7%94%A8%E5%B0%8F%E6%8C%87%E4%BB%A4"><span class="toc-number">1.</span> <span class="toc-text">0.常用小指令</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#1-Git%E4%B8%BB%E8%A6%81%E5%91%BD%E4%BB%A4"><span class="toc-number">2.</span> <span class="toc-text">1.Git主要命令</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%8F%90%E4%BA%A4%E5%88%86%E6%94%AF"><span class="toc-number">2.1.</span> <span class="toc-text">提交分支</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%96%B0%E5%BB%BA%E5%88%86%E6%94%AF"><span class="toc-number">2.2.</span> <span class="toc-text">新建分支</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%87%E6%8D%A2%E5%88%B0%E8%AF%A5%E5%88%86%E6%94%AF"><span class="toc-number">2.3.</span> <span class="toc-text">切换到该分支</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%90%88%E5%B9%B6%E5%88%86%E6%94%AF"><span class="toc-number">2.4.</span> <span class="toc-text">合并分支</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2-%E5%88%86%E7%A6%BBHEAD"><span class="toc-number">3.</span> <span class="toc-text">2.分离HEAD</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%9B%B8%E5%AF%B9%E5%BC%95%E7%94%A8"><span class="toc-number">3.1.</span> <span class="toc-text">相对引用</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%92%A4%E9%94%80%E5%8F%98%E6%9B%B4"><span class="toc-number">3.2.</span> <span class="toc-text">撤销变更</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#3-%E8%87%AA%E7%94%B1%E4%BF%AE%E6%94%B9%E6%8F%90%E4%BA%A4%E6%A0%91"><span class="toc-number">4.</span> <span class="toc-text">3.自由修改提交树</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%95%B4%E7%90%86%E6%8F%90%E4%BA%A4%E8%AE%B0%E5%BD%95"><span class="toc-number">4.1.</span> <span class="toc-text">整理提交记录</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%A4%E4%BA%92%E5%BC%8F%E7%9A%84rebase"><span class="toc-number">4.2.</span> <span class="toc-text">交互式的rebase</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9C%AC%E5%9C%B0%E6%A0%88%E5%BC%8F%E6%8F%90%E4%BA%A4"><span class="toc-number">4.3.</span> <span class="toc-text">本地栈式提交</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%8F%90%E4%BA%A4%E7%9A%84%E6%8A%80%E5%B7%A7"><span class="toc-number">4.4.</span> <span class="toc-text">提交的技巧</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#git-tag"><span class="toc-number">4.5.</span> <span class="toc-text">git tag</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#git-describe"><span class="toc-number">4.6.</span> <span class="toc-text">git describe</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#4-%E5%A4%9A%E6%AC%A1rebase%E7%9A%84%E7%94%A8%E6%B3%95"><span class="toc-number">5.</span> <span class="toc-text">4.多次rebase的用法</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%BF%94%E5%9B%9E%E4%B8%8A%E4%B8%AA%E6%97%B6%E9%81%87%E5%88%B0%E4%B8%A4%E4%B8%AA%E7%88%B6%E8%8A%82%E7%82%B9"><span class="toc-number">5.1.</span> <span class="toc-text">返回上个时遇到两个父节点</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#5-%E8%BF%9C%E7%A8%8B%E4%BB%93%E5%BA%93"><span class="toc-number">6.</span> <span class="toc-text">5.远程仓库</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%8B%E9%9A%86%E4%BB%A3%E7%A0%81"><span class="toc-number">6.1.</span> <span class="toc-text">克隆代码</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%BF%9C%E7%A8%8B%E5%88%86%E6%94%AF"><span class="toc-number">6.2.</span> <span class="toc-text">远程分支</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80%E9%94%AE%E4%B8%8B%E8%BD%BD"><span class="toc-number">6.3.</span> <span class="toc-text">一键下载</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#git-pull"><span class="toc-number">6.4.</span> <span class="toc-text">git pull</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%A8%A1%E6%8B%9F%E5%9B%A2%E9%98%9F%E5%90%88%E4%BD%9C"><span class="toc-number">6.5.</span> <span class="toc-text">模拟团队合作</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#git-push%E4%B8%80%E9%94%AE%E4%B8%8A%E4%BC%A0"><span class="toc-number">6.6.</span> <span class="toc-text">git push一键上传</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%81%8F%E7%A6%BB%E7%9A%84%E6%8F%90%E4%BA%A4%E5%8E%86%E5%8F%B2"><span class="toc-number">6.7.</span> <span class="toc-text">偏离的提交历史</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%BF%9C%E7%A8%8B%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%8B%92%E7%BB%9D-Remote-Rejected"><span class="toc-number">6.8.</span> <span class="toc-text">远程服务器拒绝!(Remote Rejected)</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#6-%E5%85%B3%E4%BA%8Eorigin%E5%92%8C%E5%AE%83%E7%9A%84%E5%91%A8%E8%BE%B9"><span class="toc-number">7.</span> <span class="toc-text">6.关于origin和它的周边</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%8E%A8%E9%80%81%E4%B8%BB%E5%88%86%E6%94%AF-rebase"><span class="toc-number">7.1.</span> <span class="toc-text">推送主分支 rebase</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%8E%A8%E9%80%81%E4%B8%BB%E5%88%86%E6%94%AF-merge"><span class="toc-number">7.2.</span> <span class="toc-text">推送主分支 merge</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%BF%9C%E7%A8%8B%E8%B7%9F%E8%B8%AA-%E5%88%9B%E5%BB%BA%E4%B8%80%E4%B8%AA%E5%90%8D%E4%B8%BAfoo%E7%9A%84%E5%88%86%E6%94%AF%E8%B7%9F%E8%B8%AAo-main"><span class="toc-number">7.3.</span> <span class="toc-text">远程跟踪,创建一个名为foo的分支跟踪o&#x2F;main</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#git%E6%9B%B4%E6%96%B0%E6%8C%87%E5%AE%9A%E4%BB%93%E5%BA%93"><span class="toc-number">7.4.</span> <span class="toc-text">git更新指定仓库</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#git-pull%E5%8F%82%E6%95%B0"><span class="toc-number">7.5.</span> <span class="toc-text">git pull参数</span></a></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/Cathelloya/2023/11/20/%E4%B8%80%E4%B8%AA%E6%80%9D%E8%80%83/" title="关于信息论的一些思考">关于信息论的一些思考</a><time datetime="2023-11-20T09:51:49.272Z" title="发表于 2023-11-20 17:51:49">2023-11-20</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/Cathelloya/2023/09/23/Kicad-1/" title="KiCad基础操作">KiCad基础操作</a><time datetime="2023-09-23T15:21:43.914Z" title="发表于 2023-09-23 23:21:43">2023-09-23</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/Cathelloya/2023/09/23/Git%20%E6%8C%87%E4%BB%A4/" title="Git基础指令">Git基础指令</a><time datetime="2023-09-23T08:57:04.472Z" title="发表于 2023-09-23 16:57:04">2023-09-23</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/Cathelloya/2023/09/23/hello-world/" title="Hello World">Hello World</a><time datetime="2023-09-23T07:32:59.861Z" title="发表于 2023-09-23 15:32:59">2023-09-23</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2023 By Cathelloya</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/Cathelloya/js/utils.js"></script><script src="/Cathelloya/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.umd.min.js"></script><div class="js-pjax"></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs git">git push origin master<br>git push origin foo<br></code></pre></td></tr></table></figure>
+<h2 id="git-pull参数"><a href="#git-pull参数" class="headerlink" title="git pull参数"></a>git pull参数</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs git">git pull origin bar:foo<br>git pull origin master:side<br></code></pre></td></tr></table></figure>
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>Git基础指令</div>
+      <div>https://cathelloya.github.io/Cathelloya/2023/09/23/Git 指令/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>Cathelloya</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2023年9月23日</div>
+        </div>
+      
+      
+      
+        <div class="license-meta-item">
+          <div>许可协议</div>
+          <div>
+            
+              
+              
+                <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                    <i class="iconfont icon-by"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/Cathelloya/2023/09/23/Kicad-1/" title="KiCad基础操作">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">KiCad基础操作</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/Cathelloya/2023/09/23/hello-world/" title="Hello World">
+                        <span class="hidden-mobile">Hello World</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>目录</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+    </div>
+  
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.4/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/Cathelloya/js/events.js" ></script>
+<script  src="/Cathelloya/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/Cathelloya/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.20.1/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/4.3.1/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script  src="/Cathelloya/js/local-search.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/Cathelloya/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+</body>
+</html>
